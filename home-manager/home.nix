@@ -78,6 +78,27 @@
   };
 
   # Shell programs
+  programs.bash = {
+    enable = true;
+    historySize = 70000;
+    historyIgnore = [
+      "cd"
+      "clear"
+      "exit"
+      "ls"
+      "pwd"
+    ];
+    sessionVariables = {};
+    shellAliases = lib.literalExpression ''
+      {
+        z = "zoxide";
+      }
+    '';
+    profileExtra = "";
+    initExtra = "";
+    bashrcExtra = "";
+    logoutExtra = "";
+  };
   programs.command-not-found = {
     enable = true;
     dbPath = "/nix/var/nix/profiles/per-user/root/channels/nixos/programs.sqlite";
