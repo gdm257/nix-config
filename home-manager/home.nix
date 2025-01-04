@@ -77,6 +77,9 @@
     enableAliases = true;
   };
 
+  # Process programs
+  programs.htop.enable = true;
+
   # Shell programs
   programs.bash = {
     enable = true;
