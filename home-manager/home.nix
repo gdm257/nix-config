@@ -55,26 +55,59 @@
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
     # DevOps
+    bit
     gitui
+    gitu
+
+    # Downloader
+    croc
+    rclone
 
     # File
+    age
+    duf
     fd
+
+    # Network
+    curl
+    wget
+    gping
+    iproute2
+
+    # Process
+    pstree
+    systemd
+    systemctl-tui
 
     # Shell
     firejail
+    mosh
+    openssh
+    powershell
+    rargs
+    uutils-coreutils
+    uutils-coreutils-noprefix
+
+    # Text
+    ripgrep
+    sad
   ];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
 
+  # Downloader programs
+  programs.nix-index.enable = true;
+
   # File programs
+  programs.eza = {
+    enable = true;
+    icons = "never";
+    extraOptions = [ "--group-directories-first" ];
+  };
   programs.fzf = {
     enable = true;
-  };
-  programs.lsd = {
-    enable = true;
-    enableAliases = true;
   };
 
   # Process programs
@@ -141,10 +174,6 @@
     localVariables = {};
     plugins = [];
     oh-my-zsh = {};
-  };
-  programs.command-not-found = {
-    enable = true;
-    dbPath = "/nix/var/nix/profiles/per-user/root/channels/nixos/programs.sqlite";
   };
   programs.man.enable = true;
   programs.starship = {
