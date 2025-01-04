@@ -147,6 +147,41 @@
     dbPath = "/nix/var/nix/profiles/per-user/root/channels/nixos/programs.sqlite";
   };
   programs.man.enable = true;
+  programs.starship = {
+    enable = true;
+    settings = lib.literalExpression ''
+        {
+	  add_newline = true;
+	  character.success_symbol = "[>](bold green)";
+	  directory.truncation_length = 0;
+	  directory.use_os_path_seq = false;
+	  directory.style = "bold #edc809";
+	  username.style_user = "green";
+	  username.style_root = "green";
+	  username.format = "[\$user](\$style)";
+	  username.disabled = false;
+	  username.show_always = true;
+	  hostname.ssh_only = false;
+	  hostname.format = "[\$ssh_symbol](bold blue)[@\$hostname](green)";
+	  hostname.disabled = false;
+	  status.style = "red bold";
+	  status.symbol = "🔴";
+	  status.success_symbol = "🟢";
+	  status.format = "[\$symbol\$signal_name\$maybe_int](\$style)";
+	  status.map_symbol = true;
+	  status.disabled = false;
+	  battery.full_symbol = "🔋 ";
+	  battery.charging_symbol = "⚡️ ";
+	  battery.discharging_symbol = "💀 ";
+	  battery.display = [
+	    {
+	      threshold = 50;
+	      style = "bold red";
+	    }
+	  ];
+	}
+      '';
+  };
   programs.zellij.enable = true;
   programs.zoxide.enable = true;
 
