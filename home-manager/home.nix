@@ -102,6 +102,46 @@
     bashrcExtra = "";
     logoutExtra = "";
   };
+  programs.zsh = {
+    enable = true;
+    autocd = false;
+    cdpath = [];
+    dotDir = null;
+    shellAliases = lib.literalExpression ''
+      {
+        z = "zoxide";
+      }
+    '';
+    shellGlobalAliases = {};
+    dirHashes = lib.literalExpression ''
+      {
+        docs = "$HOME/Documents";
+        vids = "$HOME/Videos";
+        dl = "$HOME/Downloads";
+      }
+    '';
+    zprof.enable = false;
+    autosuggestion = {
+      enable = true;
+      strategy = [
+        "history"
+	# "completion"
+	# "match_prev_cmd"
+      ];
+    };
+    defaultKeymap = null; # "emacs" "viins" "vicmd"
+    sessionVariables = {};
+    initExtraBeforeCompInit = "";
+    initExtra = "";
+    initExtraFirst = "";
+    envExtra = "";
+    profileExtra = "";
+    loginExtra = "";
+    logoutExtra = "";
+    localVariables = {};
+    plugins = [];
+    oh-my-zsh = {};
+  };
   programs.command-not-found = {
     enable = true;
     dbPath = "/nix/var/nix/profiles/per-user/root/channels/nixos/programs.sqlite";
