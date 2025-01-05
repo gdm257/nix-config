@@ -97,9 +97,6 @@
   programs.home-manager.enable = true;
   programs.git.enable = true;
 
-  # Downloader programs
-  programs.nix-index.enable = true;
-
   # File programs
   programs.eza = {
     enable = true;
