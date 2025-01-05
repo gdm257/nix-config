@@ -107,8 +107,9 @@
     enable = true;
   };
   programs.yazi = {
+    # TODO: issue nix-community/home-manager#6273
     enable = true;
-    settings = lib.literalExpression ''
+    settings =
       {
         manager = {
           show_hidden = true;
@@ -118,7 +119,35 @@
           image_filter = "lanczos3";
         };
       }
-    '';
+    ;
+    keymap =
+      {
+        input.prepend_keymap = [
+          { run = "close"; on = [ "<C-q>" ]; }
+        ];
+      }
+    ;
+    theme =
+      {
+        flavor = { dark = "catppuccin-mocha"; light = "catppuccin-macchiato"; };
+      }
+    ;
+    flavors =
+      let
+        repo = pkgs.fetchFromGitHub {
+          owner = "yazi-rs";
+          repo = "flavors";
+          rev = "fc8eeaab9da882d0e77ecb4e603b67903a94ee6e";
+          hash = "sha256-wvxwK4QQ3gUOuIXpZvrzmllJLDNK6zqG5V2JAqTxjiY=";
+        };
+      in
+      {
+        catppuccin-frappe = repo + "/catppuccin-frappe.yazi";
+        catppuccin-latte = repo + "/catppuccin-latte.yazi";
+        catppuccin-macchiato = repo + "/catppuccin-macchiato.yazi";
+        catppuccin-mocha = repo + "/catppuccin-mocha.yazi";
+      }
+    ;
   };
 
   # Process programs
