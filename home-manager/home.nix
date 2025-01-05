@@ -216,7 +216,7 @@
       add_newline = true;
       character.success_symbol = "[>](bold green)";
       directory.truncation_length = 0;
-      directory.use_os_path_seq = false;
+      directory.use_os_path_sep = false;
       directory.style = "bold #edc809";
       username.style_user = "green";
       username.style_root = "green";
