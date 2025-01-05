@@ -87,6 +87,8 @@
     rargs
     uutils-coreutils
     uutils-coreutils-noprefix
+    wsl-open
+    xdg-utils
 
     # Text
     ripgrep
