@@ -106,6 +106,20 @@
   programs.fzf = {
     enable = true;
   };
+  programs.yazi = {
+    enable = true;
+    settings = lib.literalExpression ''
+        {
+	  manager = {
+	    show_hidden = true;
+	    sort_dir_first = true;
+	  };
+	  preview = {
+	    image_filter = "lanczos3";
+	  };
+	}
+      '';
+  };
 
   # Process programs
   programs.htop.enable = true;
