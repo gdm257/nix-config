@@ -256,6 +256,19 @@
     vimAlias = true;
     vimdiffAlias = true;
   };
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscodium;
+    extensions = with pkgs.vscode-extensions; [ ];
+    mutableExtensionsDir = true;
+    userSettings = { };
+    userTasks = { };
+    keybindings = [ ];
+    globalSnippets = { };
+    languageSnippets = { };
+    haskell.enable = false;
+    haskell.hie.enable = false;
+  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
