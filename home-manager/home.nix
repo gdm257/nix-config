@@ -413,6 +413,13 @@
 
       # AI
       codeium.codeium
+      # GitHub.copilot
+      # GitHub.copilot-chat
+      # Codium.codium
+      # AMiner.codegeex
+      # DanielSanMedium.dscodegpt
+      # Blackboxapp.blackbox
+      # Alibaba-Cloud.tongyi-lingma
 
       # VIM
       asvetliakov.vscode-neovim
@@ -452,6 +459,12 @@
       # Theme
       unthrottled.doki-theme
       emmanuelbeziat.vscode-great-icons
+
+      # Funny
+      # AlexShenVSCode.vscode-osu
+      # hoovercj.vscode-power-mode
+      # ezshine.rainbow-fart-waifu
+      # deepred.daily-anime
 
       # Others
       alefragnani.bookmarks
