@@ -259,7 +259,62 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-    extensions = with pkgs.vscode-extensions; [ ];
+    extensions = with pkgs.vscode-extensions; [
+      # Common extensions
+      adam-bender.commit-message-editor
+      alefragnani.bookmarks
+      alefragnani.project-manager
+      antonreshetov.masscode-assistant
+      asvetliakov.vscode-neovim
+      codeium.codeium
+      davidanson.vscode-markdownlint
+      deerawan.vscode-dash
+      donjayamanne.githistory
+      eamodio.gitlens
+      editorconfig.editorconfig
+      emilast.logfilehighlighter
+      emmanuelbeziat.vscode-great-icons
+      github.remotehub
+      github.vscode-github-actions
+      github.vscode-pull-request-github
+      grapecity.gc-excelviewer
+      gruntfuggly.todo-tree
+      hediet.debug-visualizer
+      inu1255.easy-snippet
+      jock.svg
+      kelvin.vscode-sshfs
+      mhutchie.git-graph
+      moshfeu.compare-folders
+      ms-vscode-remote.remote-containers
+      ms-vscode-remote.remote-ssh
+      ms-vscode-remote.remote-ssh-edit
+      ms-vscode-remote.remote-wsl
+      ms-vscode-remote.vscode-remote-extensionpack
+      ms-vscode.azure-repos
+      ms-vscode.remote-explorer
+      ms-vscode.remote-repositories
+      ms-vscode.remote-server
+      ms-vscode.vscode-speech
+      mutantdino.resourcemonitor
+      pomber.git-file-history
+      quicktype.quicktype
+      redhat.vscode-yaml
+      ryu1kn.edit-with-shell
+      shardulm94.trailing-spaces
+      shd101wyy.markdown-preview-enhanced
+      sleistner.vscode-fileutils
+      streetsidesoftware.code-spell-checker
+      tamasfe.even-better-toml
+      unthrottled.doki-theme
+      usernamehw.errorlens
+      visualstudioexptteam.intellicode-api-usage-examples
+      visualstudioexptteam.vscodeintellicode
+      vscode-snippet.snippet
+      vscodevim.vim
+      yutengjing.open-in-external-app
+      yzhang.markdown-all-in-one
+      zjffun.snippetsmanager
+    ];
     mutableExtensionsDir = true;
     userSettings = { };
     userTasks = { };
