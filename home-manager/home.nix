@@ -260,31 +260,184 @@
     enable = true;
     package = pkgs.vscodium;
     extensions = with pkgs.vscode-extensions; [
-      # Common extensions
-      adam-bender.commit-message-editor
-      alefragnani.bookmarks
-      alefragnani.project-manager
-      antonreshetov.masscode-assistant
-      asvetliakov.vscode-neovim
+      # Assembly
+      dan-c-underwood.arm
+      13xforever.language-x86-64-assembly
+
+      # C/C++
+      bbenoist.doxygen
+      cschlosser.doxdocgen
+      jeff-hykin.better-cpp-syntax
+      xaver.clang-format
+      llvm-vs-code-extensions.vscode-clangd
+      ms-vscode.cmake-tools
+      twxs.cmake
+      vadimcn.vscode-lldb
+      ms-vscode.makefile-tools
+      tboox.xmake-vscode
+
+      # Rust
+      fill-labs.dependi
+      rust-lang.rust-analyzer
+      vadimcn.vscode-lldb
+
+      # Go
+      golang.go
+      xiaoxin-technology.goctl
+
+      # Web - JS/TS/CSS/HTML
+      anbuselvanrocky.bootstrap5-vscode
+      antfu.iconify
+      astro-build.astro-vscode
+      bradlc.vscode-tailwindcss
+      aaravb.chrome-extension-developer-tools
+      burkeholland.simple-react-snippets
+      christian-kohler.npm-intellisense
+      christian-kohler.path-intellisense
+      cipchk.cssrem
+      dbaeumer.vscode-eslint
+      donjayamanne.jquerysnippets
+      AbhiPatel.jquery-snippets
+      dsznajder.es7-react-js-snippets
+      ecmel.vscode-html-css
+      esbenp.prettier-vscode
+      firefox-devtools.vscode-firefox-debug
+      hollowtree.vue-snippets
+      mariusschulz.yarn-lock-syntax
+      ms-vscode.live-server
+      ritwickdey.LiveServer
+      msjsdiag.vscode-react-native
+      octref.vetur
+      otovo-oss.htmx-tags
+      pcbowers.alpine-intellisense
+      pranaygp.vscode-css-peek
+      rvest.vs-code-prettier-eslint
+      humao.rest-client
+      sdras.vue-vscode-snippets
+      Orta.vscode-jest
+      vue.volar
+      # wallabyjs.quokka-vscode
+      xabikos.JavaScriptSnippets
+      zignd.html-css-class-completion
+      yoavbls.pretty-ts-errors
+      youngjuning.yarn-lock-preview
+      zxh404.vscode-proto
+
+      # JVM - Java/Kotlin/Scala/Clojure
+      betterthantomorrow.calva-spritz
+      betterthantomorrow.calva
+      vscjava.vscode-java-pack
+      fwcd.kotlin
+      scalameta.metals
+      scala-lang.scala
+      SonarSource.sonarlint-vscode
+      vmware.vscode-boot-dev-pack
+
+      # Lua
+      sumneko.lua
+      actboy168.lua-debug
+
+      # Matlab
+      affenwiesel.matlab-formatter
+      apommel.matlab-interactive-terminal
+      bat67.matlab-extension-pack
+
+      # Lisp
+      mattn.Lisp
+
+      # .NET - C#/F#/PowerShell
+      ms-dotnettools.vscodeintellicode-csharp
+      Ionide.Ionide-fsharp
+      ms-vscode.PowerShell
+      ms-dotnettools.dotnet-interactive-vscode
+
+      # PHP
+      zobo.php-intellisense
+      xdebug.php-debug
+      xdebug.php-pack
+
+      # Python
+      ms-python.python
+      ms-python.vscode-pylance
+      ms-python.debugpy
+      njpwerner.autodocstring
+      rodolphebarbanneau.python-docstring-highlighter
+      seanwu.vscode-qt-for-python
+      EricSia.pythonsnippets3
+      "076923".python-image-preview
+      batisteo.vscode-django
+      junstyle.vscode-django-support
+      samuelcolvin.jinjahtml
+      battlebas.kivy-vscode
+      ms-toolsai.jupyter
+      ms-python.mypy-type-checker
+      charliermarsh.ruff
+      ms-python.vscode-python-envs
+
+      # DevOps
+      redhat.ansible
+      mrmlnc.vscode-apache
+      ahmadalli.vscode-nginx-conf
+      raynigon.nginx-formatter
+      eiminsasete.apacheconf-snippets
+      thqby.vscode-autohotkey2-lsp
+      rogalmic.bash-debug
+      mads-hartmann.bash-ide-vscode
+      jeff-hykin.better-dockerfile-syntax
+      jeff-hykin.better-shellscript-syntax
+      samuelcolvin.jinjahtml
+      mindaro.mindaro
+      matthewpi.caddyfile-support
+      formulahendry.code-runner
+      ms-azuretools.vscode-docker
+      p1c2u.docker-compose
+      exiasr.hadolint
+      Maarti.jenkins-doc
+      ivory-lab.jenkinsfile-support
+      ms-kubernetes-tools.vscode-kubernetes-tools
+      berublan.vscode-log-viewer
+      xshrim.txt-syntax
+      meronz.manpages
+      okteto.remote-kubernetes
+      asciidoctor.asciidoctor-vscode
+      tetradresearch.vscode-h2o
+      woozy-masta.shell-script-ide
+      foxundermoon.shell-format
+      timonwong.shellcheck
+      Remisa.shellman
+      hangxingliu.vscode-systemd-support
+      bbenoist.vagrant
+      marcostazi.VS-code-vagrantfile
+
+      # ==== Common ====
+
+      # AI
       codeium.codeium
-      davidanson.vscode-markdownlint
-      deerawan.vscode-dash
+
+      # VIM
+      asvetliakov.vscode-neovim
+      # vscodevim.vim
+
+      # Snippets
+      visualstudioexptteam.intellicode-api-usage-examples
+      visualstudioexptteam.vscodeintellicode
+      vscode-snippet.snippet
+      zjffun.snippetsmanager
+      inu1255.easy-snippet
+      antonreshetov.masscode-assistant
+
+      # Git
+      mhutchie.git-graph
       donjayamanne.githistory
+      pomber.git-file-history
+      moshfeu.compare-folders
       eamodio.gitlens
-      editorconfig.editorconfig
-      emilast.logfilehighlighter
-      emmanuelbeziat.vscode-great-icons
-      github.remotehub
+      adam-bender.commit-message-editor
       github.vscode-github-actions
       github.vscode-pull-request-github
-      grapecity.gc-excelviewer
-      gruntfuggly.todo-tree
-      hediet.debug-visualizer
-      inu1255.easy-snippet
-      jock.svg
-      kelvin.vscode-sshfs
-      mhutchie.git-graph
-      moshfeu.compare-folders
+      github.remotehub
+
+      # Remote
       ms-vscode-remote.remote-containers
       ms-vscode-remote.remote-ssh
       ms-vscode-remote.remote-ssh-edit
@@ -294,26 +447,35 @@
       ms-vscode.remote-explorer
       ms-vscode.remote-repositories
       ms-vscode.remote-server
+      kelvin.vscode-sshfs
+
+      # Theme
+      unthrottled.doki-theme
+      emmanuelbeziat.vscode-great-icons
+
+      # Others
+      alefragnani.bookmarks
+      alefragnani.project-manager
+      davidanson.vscode-markdownlint
+      deerawan.vscode-dash
+      editorconfig.editorconfig
+      emilast.logfilehighlighter
+      grapecity.gc-excelviewer
+      gruntfuggly.todo-tree
+      hediet.debug-visualizer
+      jock.svg
       ms-vscode.vscode-speech
       mutantdino.resourcemonitor
-      pomber.git-file-history
       quicktype.quicktype
       redhat.vscode-yaml
       ryu1kn.edit-with-shell
       shardulm94.trailing-spaces
       shd101wyy.markdown-preview-enhanced
       sleistner.vscode-fileutils
-      streetsidesoftware.code-spell-checker
       tamasfe.even-better-toml
-      unthrottled.doki-theme
       usernamehw.errorlens
-      visualstudioexptteam.intellicode-api-usage-examples
-      visualstudioexptteam.vscodeintellicode
-      vscode-snippet.snippet
-      vscodevim.vim
       yutengjing.open-in-external-app
       yzhang.markdown-all-in-one
-      zjffun.snippetsmanager
     ];
     mutableExtensionsDir = true;
     userSettings = { };
