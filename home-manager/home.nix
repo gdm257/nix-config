@@ -51,6 +51,25 @@
     homeDirectory = "/root";
   };
 
+  home.sessionPath = [ ];
+  home.shellAliases = {
+    z = "zoxide";
+  };
+  home.sessionVariables = { };
+  editorconfig = {
+    enable = true;
+    settings = {
+      "*" = {
+        charset = "utf-8";
+        end_of_line=  "lf";
+        trim_trailing_whitespace = true;
+        indent_style = "space";
+        # indent_size= 4;
+        # insert_final_newline = true;
+      };
+    };
+  };
+
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
@@ -167,9 +186,7 @@
       "pwd"
     ];
     sessionVariables = { };
-    shellAliases = {
-      z = "zoxide";
-    };
+    shellAliases = { };
     profileExtra = "";
     initExtra = "";
     bashrcExtra = "";
@@ -180,9 +197,7 @@
     autocd = false;
     cdpath = [ ];
     dotDir = null;
-    shellAliases = {
-      z = "zoxide";
-    };
+    shellAliases = { };
     shellGlobalAliases = { };
     dirHashes = {
       docs = "$HOME/Documents";
