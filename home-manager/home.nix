@@ -448,6 +448,12 @@
       inu1255.easy-snippet
       antonreshetov.masscode-assistant
 
+      # Docs/Notes
+      deerawan.vscode-dash
+      gruntfuggly.todo-tree
+      alefragnani.bookmarks
+      alefragnani.project-manager
+
       # Git
       mhutchie.git-graph
       donjayamanne.githistory
@@ -482,14 +488,10 @@
       # deepred.daily-anime
 
       # Others
-      alefragnani.bookmarks
-      alefragnani.project-manager
       davidanson.vscode-markdownlint
-      deerawan.vscode-dash
       editorconfig.editorconfig
       emilast.logfilehighlighter
       grapecity.gc-excelviewer
-      gruntfuggly.todo-tree
       hediet.debug-visualizer
       jock.svg
       ms-vscode.vscode-speech
