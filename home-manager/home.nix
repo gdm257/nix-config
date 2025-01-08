@@ -278,14 +278,15 @@
       let
         pkgs-vscode-extensions = with pkgs.vscode-extensions; [ ];
         # TODO: FIXME
-        vscode-marketplace-release-extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.vscode-marketplace-release; [
-          # Assembly
+        vscode-marketplace-release-extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.vscode-marketplace-release; [ ];
+        vscode-marketplace-extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.vscode-marketplace; [
+          # assembly
           dan-c-underwood.arm
           platformio.platformio-ide
-          CL.eide
-          "13xforever".language-x86-64-assembly
+          cl.eide
+          # "13xforever".language-x86-64-assembly
 
-          # C/C++
+          # c/c++
           bbenoist.doxygen
           cschlosser.doxdocgen
           jeff-hykin.better-cpp-syntax
@@ -297,16 +298,16 @@
           ms-vscode.makefile-tools
           tboox.xmake-vscode
 
-          # Rust
+          # rust
           fill-labs.dependi
           rust-lang.rust-analyzer
           vadimcn.vscode-lldb
 
-          # Go
+          # go
           golang.go
           xiaoxin-technology.goctl
 
-          # Web - JS/TS/CSS/HTML
+          # web - js/ts/css/html
           anbuselvanrocky.bootstrap5-vscode
           antfu.iconify
           astro-build.astro-vscode
@@ -318,7 +319,7 @@
           cipchk.cssrem
           dbaeumer.vscode-eslint
           donjayamanne.jquerysnippets
-          AbhiPatel.jquery-snippets
+          abhipatel.jquery-snippets
           dsznajder.es7-react-js-snippets
           ecmel.vscode-html-css
           esbenp.prettier-vscode
@@ -326,7 +327,7 @@
           hollowtree.vue-snippets
           mariusschulz.yarn-lock-syntax
           ms-vscode.live-server
-          ritwickdey.LiveServer
+          ritwickdey.liveserver
           msjsdiag.vscode-react-native
           octref.vetur
           otovo-oss.htmx-tags
@@ -335,60 +336,60 @@
           rvest.vs-code-prettier-eslint
           humao.rest-client
           sdras.vue-vscode-snippets
-          Orta.vscode-jest
+          orta.vscode-jest
           vue.volar
           # wallabyjs.quokka-vscode
-          xabikos.JavaScriptSnippets
+          xabikos.javascriptsnippets
           zignd.html-css-class-completion
           yoavbls.pretty-ts-errors
           youngjuning.yarn-lock-preview
-          zxh404.vscode-proto
+          zxh404.vscode-proto3
 
-          # JVM - Java/Kotlin/Scala/Clojure
+          # jvm - java/kotlin/scala/clojure
           betterthantomorrow.calva-spritz
           betterthantomorrow.calva
           vscjava.vscode-java-pack
           fwcd.kotlin
           scalameta.metals
           scala-lang.scala
-          SonarSource.sonarlint-vscode
+          sonarsource.sonarlint-vscode
           vmware.vscode-boot-dev-pack
 
-          # Lua
+          # lua
           sumneko.lua
           actboy168.lua-debug
 
-          # Matlab
+          # matlab
           affenwiesel.matlab-formatter
           apommel.matlab-interactive-terminal
           bat67.matlab-extension-pack
 
-          # Lisp
-          mattn.Lisp
+          # lisp
+          mattn.lisp
 
-          # Nix
+          # nix
           pinage404.nix-extension-pack
 
-          # .NET - C#/F#/PowerShell
+          # .net - c#/f#/powershell
           ms-dotnettools.vscodeintellicode-csharp
-          Ionide.Ionide-fsharp
-          ms-vscode.PowerShell
+          ionide.ionide-fsharp
+          ms-vscode.powershell
           ms-dotnettools.dotnet-interactive-vscode
 
-          # PHP
+          # php
           zobo.php-intellisense
           xdebug.php-debug
           xdebug.php-pack
 
-          # Python
+          # python
           ms-python.python
           ms-python.vscode-pylance
           ms-python.debugpy
           njpwerner.autodocstring
           rodolphebarbanneau.python-docstring-highlighter
           seanwu.vscode-qt-for-python
-          EricSia.pythonsnippets3
-          "076923".python-image-preview
+          ericsia.pythonsnippets3
+          # "076923".python-image-preview
           batisteo.vscode-django
           junstyle.vscode-django-support
           samuelcolvin.jinjahtml
@@ -398,7 +399,7 @@
           charliermarsh.ruff
           ms-python.vscode-python-envs
 
-          # DevOps
+          # devops
           redhat.ansible
           mrmlnc.vscode-apache
           ahmadalli.vscode-nginx-conf
@@ -416,7 +417,7 @@
           ms-azuretools.vscode-docker
           p1c2u.docker-compose
           exiasr.hadolint
-          Maarti.jenkins-doc
+          maarti.jenkins-doc
           ivory-lab.jenkinsfile-support
           ms-kubernetes-tools.vscode-kubernetes-tools
           berublan.vscode-log-viewer
@@ -428,28 +429,28 @@
           woozy-masta.shell-script-ide
           foxundermoon.shell-format
           timonwong.shellcheck
-          Remisa.shellman
+          remisa.shellman
           hangxingliu.vscode-systemd-support
           bbenoist.vagrant
-          marcostazi.VS-code-vagrantfile
+          # marcostazi.vs-code-vagrantfile
 
-          # ==== Common ====
+          # ==== common ====
 
-          # AI
+          # ai
           codeium.codeium
-          # GitHub.copilot
-          # GitHub.copilot-chat
-          # Codium.codium
-          # AMiner.codegeex
-          # DanielSanMedium.dscodegpt
-          # Blackboxapp.blackbox
-          # Alibaba-Cloud.tongyi-lingma
+          # github.copilot
+          # github.copilot-chat
+          # codium.codium
+          # aminer.codegeex
+          # danielsanmedium.dscodegpt
+          # blackboxapp.blackbox
+          # alibaba-cloud.tongyi-lingma
 
-          # VIM
+          # vim
           asvetliakov.vscode-neovim
           # vscodevim.vim
 
-          # Snippets
+          # snippets
           visualstudioexptteam.intellicode-api-usage-examples
           visualstudioexptteam.vscodeintellicode
           vscode-snippet.snippet
@@ -457,13 +458,13 @@
           inu1255.easy-snippet
           antonreshetov.masscode-assistant
 
-          # Docs/Notes
+          # docs/notes
           deerawan.vscode-dash
           gruntfuggly.todo-tree
           alefragnani.bookmarks
           alefragnani.project-manager
 
-          # Git
+          # git
           mhutchie.git-graph
           donjayamanne.githistory
           pomber.git-file-history
@@ -474,7 +475,7 @@
           github.vscode-pull-request-github
           github.remotehub
 
-          # Remote
+          # remote
           ms-vscode-remote.remote-containers
           ms-vscode-remote.remote-ssh
           ms-vscode-remote.remote-ssh-edit
@@ -486,17 +487,17 @@
           ms-vscode.remote-server
           kelvin.vscode-sshfs
 
-          # Theme
+          # theme
           unthrottled.doki-theme
           emmanuelbeziat.vscode-great-icons
 
-          # Funny
-          # AlexShenVSCode.vscode-osu
+          # funny
+          # alexshenvscode.vscode-osu
           # hoovercj.vscode-power-mode
           # ezshine.rainbow-fart-waifu
           # deepred.daily-anime
 
-          # Others
+          # others
           davidanson.vscode-markdownlint
           editorconfig.editorconfig
           emilast.logfilehighlighter
@@ -516,7 +517,6 @@
           yutengjing.open-in-external-app
           yzhang.markdown-all-in-one
         ];
-        vscode-marketplace-extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.vscode-marketplace; [ ];
         open-vsx-release-extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.open-vsx-release; [ ];
         open-vsx-extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.open-vsx; [ ];
       in
