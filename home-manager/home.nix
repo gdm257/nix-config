@@ -277,7 +277,9 @@
     extensions = with pkgs.vscode-extensions; [
       # Assembly
       dan-c-underwood.arm
-      13xforever.language-x86-64-assembly
+      platformio.platformio-ide
+      CL.eide
+      "13xforever".language-x86-64-assembly
 
       # C/C++
       bbenoist.doxygen
@@ -359,6 +361,9 @@
 
       # Lisp
       mattn.Lisp
+
+      # Nix
+      pinage404.nix-extension-pack
 
       # .NET - C#/F#/PowerShell
       ms-dotnettools.vscodeintellicode-csharp
