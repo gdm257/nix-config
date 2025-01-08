@@ -274,7 +274,10 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-    extensions = with pkgs.vscode-extensions; [
+    extensions = let
+      pkgs-extensions = with pkgs.vscode-extensions; [ ];
+      # TODO: FIXME
+      marketplace-release-extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.vscode-marketplace-release; [
       # Assembly
       dan-c-underwood.arm
       platformio.platformio-ide
@@ -512,6 +515,16 @@
       yutengjing.open-in-external-app
       yzhang.markdown-all-in-one
     ];
+      marketplace-extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.vscode-marketplace; [ ];
+      open-vsx-release-extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.open-vsx-release; [ ];
+      open-vsx-extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.open-vsx; [ ];
+    in
+      pkgs-extensions
+      ++ marketplace-release-extensions
+      ++ marketplace-extensions
+      ++ open-vsx-release-extensions
+      ++ open-vsx-extensions
+    ;
     mutableExtensionsDir = true;
     userSettings = { };
     userTasks = { };
