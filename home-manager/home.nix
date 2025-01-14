@@ -85,15 +85,22 @@
     # File
     age
     duf
+    dust
     fd
 
+    # Kernel
+    fastfetch
+
     # Network
+    bandwhich
     curl
     wget
+    doggo
     gping
     iproute2
 
     # Process
+    htop
     pstree
     systemd
     systemctl-tui
@@ -110,8 +117,10 @@
     xdg-utils
 
     # Text
+    jq
     ripgrep
     sad
+    yq
   ];
 
   # Enable home-manager and git
@@ -126,6 +135,9 @@
   };
   programs.fzf = {
     enable = true;
+    enableBashIntegration = false;
+    enableFishIntegration = false;
+    enableZshIntegration = false;
   };
   programs.yazi = {
     # TODO: issue nix-community/home-manager#6273
@@ -227,6 +239,14 @@
     oh-my-zsh = { };
   };
   programs.man.enable = true;
+  programs.mcfly = {
+    enable = true;
+    enableBashIntegration = true;
+    enableFishIntegration = true;
+    enableZshIntegration = true;
+    interfaceView = "TOP"; # TOP / BOTTOM
+    fzf.enable=  true;
+  };
   programs.starship = {
     enable = true;
     settings = {
