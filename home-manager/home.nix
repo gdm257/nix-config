@@ -137,12 +137,11 @@
   };
   programs.fzf = {
     enable = true;
-    enableBashIntegration = false;
-    enableFishIntegration = false;
-    enableZshIntegration = false;
+    # enableBashIntegration = false;
+    # enableFishIntegration = false;
+    # enableZshIntegration = false;
   };
   programs.yazi = {
-    # TODO: issue nix-community/home-manager#6273
     enable = true;
     settings =
       {
@@ -241,14 +240,6 @@
     oh-my-zsh = { };
   };
   programs.man.enable = true;
-  programs.mcfly = {
-    enable = true;
-    enableBashIntegration = true;
-    enableFishIntegration = true;
-    enableZshIntegration = true;
-    interfaceView = "TOP"; # TOP / BOTTOM
-    fzf.enable=  true;
-  };
   programs.starship = {
     enable = true;
     settings = {
