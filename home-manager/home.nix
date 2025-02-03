@@ -451,6 +451,11 @@
 
           # ai
           codeium.codeium
+          dreamlight.aline
+          # coolcline.coolcline
+          # rooveterinaryinc.roo-cline
+          # saoudrizwan.claude-dev
+          # continue.continue
           # github.copilot
           # github.copilot-chat
           # codium.codium
@@ -529,6 +534,7 @@
           usernamehw.errorlens
           yutengjing.open-in-external-app
           yzhang.markdown-all-in-one
+          rszyma.vscode-kanata
         ];
         open-vsx-release-extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.open-vsx-release; [ ];
         open-vsx-extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.open-vsx; [ ];
