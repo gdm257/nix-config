@@ -431,7 +431,7 @@
           p1c2u.docker-compose
           exiasr.hadolint
           maarti.jenkins-doc
-          ivory-lab.jenkinsfile-support
+          # ivory-lab.jenkinsfile-support
           ms-kubernetes-tools.vscode-kubernetes-tools
           berublan.vscode-log-viewer
           xshrim.txt-syntax
@@ -451,11 +451,11 @@
 
           # ai
           codeium.codeium
-          dreamlight.aline
+          # continue.continue
+          # dreamlight.aline
           # coolcline.coolcline
           # rooveterinaryinc.roo-cline
           # saoudrizwan.claude-dev
-          # continue.continue
           # github.copilot
           # github.copilot-chat
           # codium.codium
@@ -497,7 +497,7 @@
           ms-vscode-remote.remote-containers
           ms-vscode-remote.remote-ssh
           ms-vscode-remote.remote-ssh-edit
-          ms-vscode-remote.remote-wsl
+          # ms-vscode-remote.remote-wsl
           ms-vscode-remote.vscode-remote-extensionpack
           ms-vscode.azure-repos
           ms-vscode.remote-explorer
