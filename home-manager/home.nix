@@ -286,7 +286,8 @@
     vimdiffAlias = true;
   };
   programs.vscode = {
-    enable = true;
+    # TODO: FIXME
+    enable = false;
     package = pkgs.vscodium;
     extensions =
       let
