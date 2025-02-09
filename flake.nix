@@ -15,6 +15,9 @@
 
     # Nix expressions for VSCode and OpenVSX extensions
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
+    localias.url = "github:peterldowns/localias";
+    localias.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {

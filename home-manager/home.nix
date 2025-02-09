@@ -100,6 +100,7 @@
     doggo
     gping
     iproute2
+    inputs.localias.packages.x86_64-linux.default
 
     # Process
     htop
