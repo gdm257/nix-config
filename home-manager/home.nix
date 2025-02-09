@@ -79,6 +79,9 @@
     bit
     gitui
     gitu
+    elfutils
+    elfkickers
+    elf-info
 
     # Downloader
     croc
@@ -89,6 +92,8 @@
     duf
     dust
     fd
+    lvm2_vdo
+    btrfs-progs
 
     # Kernel
     fastfetch
@@ -100,13 +105,13 @@
     doggo
     gping
     iproute2
-    inputs.localias.packages.x86_64-linux.default
+    caddy inputs.localias.packages.x86_64-linux.default
 
     # Process
     htop
     pstree
     systemd
-    systemctl-tui
+    libcgroup
 
     # Shell
     firejail
@@ -114,6 +119,7 @@
     openssh
     powershell
     rargs
+    util-linux
     uutils-coreutils
     uutils-coreutils-noprefix
     wsl-open
