@@ -3,6 +3,7 @@
 {
   inputs,
   outputs,
+  globals,
   lib,
   config,
   pkgs,
@@ -47,8 +48,8 @@
 
   # TODO: Set your username
   home = {
-    username = "root";
-    homeDirectory = "/root";
+    username = globals.username;
+    homeDirectory = globals.home;
   };
 
   home.sessionPath = [ ];
@@ -105,7 +106,7 @@
     doggo
     gping
     iproute2
-    caddy inputs.localias.packages.x86_64-linux.default
+    caddy inputs.localias.packages.${globals.system}.default
 
     # Process
     htop
@@ -299,8 +300,8 @@
       let
         pkgs-vscode-extensions = with pkgs.vscode-extensions; [ ];
         # TODO: FIXME
-        vscode-marketplace-release-extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.vscode-marketplace-release; [ ];
-        vscode-marketplace-extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.vscode-marketplace; [
+        vscode-marketplace-release-extensions = with inputs.nix-vscode-extensions.extensions.${globals.system}.vscode-marketplace-release; [ ];
+        vscode-marketplace-extensions = with inputs.nix-vscode-extensions.extensions.${globals.system}.vscode-marketplace; [
           # assembly
           dan-c-underwood.arm
           platformio.platformio-ide
@@ -544,8 +545,8 @@
           yzhang.markdown-all-in-one
           rszyma.vscode-kanata
         ];
-        open-vsx-release-extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.open-vsx-release; [ ];
-        open-vsx-extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.open-vsx; [ ];
+        open-vsx-release-extensions = with inputs.nix-vscode-extensions.extensions.${globals.system}.open-vsx-release; [ ];
+        open-vsx-extensions = with inputs.nix-vscode-extensions.extensions.${globals.system}.open-vsx; [ ];
       in
         pkgs-vscode-extensions
         ++ vscode-marketplace-release-extensions

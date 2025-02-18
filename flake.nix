@@ -44,6 +44,14 @@
     # This is a function that generates an attribute by calling a function you
     # pass to it, with each system as an argument
     forAllSystems = nixpkgs.lib.genAttrs systems;
+
+    # Global variables
+    # TODO 
+    # FIXME
+    globals.system = "x86_64-linux";
+    globals.hostname = "your-hostname";
+    globals.username = "root";
+    globals.home = "/root";
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
@@ -66,7 +74,7 @@
     nixosConfigurations = {
       # FIXME replace with your hostname
       your-hostname = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs outputs globals;};
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
@@ -79,8 +87,8 @@
     homeConfigurations = {
       # FIXME replace with your username@hostname
       "root" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs;};
+        pkgs = nixpkgs.legacyPackages.${globals.system}; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {inherit inputs outputs globals;};
         modules = [
           # > Our main home-manager configuration file <
           ./home-manager/home.nix
