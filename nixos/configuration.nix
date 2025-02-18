@@ -23,6 +23,20 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+
+    # Run the Proxmox Hypervisor on top of NixOS
+    # TODO: FIXME
+    proxmox-nixos.nixosModules.promox-ve (
+      { pkgs, lib, ... }: {
+        services.promox-ve = {
+          enable = true;
+          ipAddress = "192.168.0.1";
+        };
+        nixpkgs.overlays = [
+          proxmox-nixos.overlays.${globals.system}
+        ];
+      }
+    );
   ];
 
   nixpkgs = {
