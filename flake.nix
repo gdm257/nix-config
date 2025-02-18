@@ -13,6 +13,9 @@
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Proxmox Hypervisor
+    proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
+
     # Nix expressions for VSCode and OpenVSX extensions
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
@@ -24,6 +27,9 @@
     self,
     nixpkgs,
     home-manager,
+    proxmox-nixos,
+    nix-vscode-extensions,
+    localias,
     ...
   } @ inputs: let
     inherit (self) outputs;
