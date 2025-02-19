@@ -70,14 +70,22 @@
     homeManagerModules = import ./modules/home-manager;
 
     # NixOS configuration entrypoint
-    # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       # FIXME replace with your hostname
-      your-hostname = nixpkgs.lib.nixosSystem {
+      # Available through 'nixos-rebuild --flake .#your-hostname'
+      ${globals.hostname} = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs globals;};
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
+        ];
+      };
+      # Available through 'nixos-rebuild --flake .#nixos-wsl'
+      "nixos-wsl" = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs globals;};
+        modules = [
+          ./nixos/configuration.nix
+          ./nixos/wsl.nix
         ];
       };
     };
@@ -86,7 +94,7 @@
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
       # FIXME replace with your username@hostname
-      "root" = home-manager.lib.homeManagerConfiguration {
+      ${globals.username} = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${globals.system}; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs globals;};
         modules = [
