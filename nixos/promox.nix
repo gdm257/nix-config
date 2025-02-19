@@ -20,9 +20,9 @@
           ipAddress = "192.168.0.1";
         };
         nixpkgs.overlays = [
-          proxmox-nixos.overlays.${globals.system}
+          inputs.proxmox-nixos.overlays.${globals.system}
         ];
       }
-    );
+    )
   ];
 }
