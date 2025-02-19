@@ -46,8 +46,7 @@
     forAllSystems = nixpkgs.lib.genAttrs systems;
 
     # Global variables
-    # TODO 
-    # FIXME
+    # FIXME: replace with your machine info
     globals.system = "x86_64-linux";
     globals.hostname = "your-hostname";
     globals.username = "root";
