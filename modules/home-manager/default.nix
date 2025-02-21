@@ -3,4 +3,19 @@
 {
   # List your module files here
   # my-module = import ./my-module.nix;
+
+  # ==== DevOps ====
+  bash = import ./bash.nix;
+  cpp = import ./cpp.nix;
+  csharp = import ./csharp.nix;
+  go = import ./go.nix;
+  haskell = import ./haskell.nix;
+  java = import ./java.nix;
+  javascript = import ./javascript.nix;
+  lua = import ./lua.nix;
+  python = import ./python.nix;
+  rust = import ./rust.nix;
+  binary = import ./binary.nix;
+  vim = import ./vim.nix;
+  vscode = import ./vscode.nix;
 }
