@@ -1,6 +1,4 @@
 {
-  inputs,
-  outputs,
   globals,
   lib,
   config,
