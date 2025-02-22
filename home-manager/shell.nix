@@ -50,7 +50,7 @@
       enable = true;
       strategy = [
         "history"
-        # "completion"
+        "completion"
         # "match_prev_cmd"
       ];
     };
