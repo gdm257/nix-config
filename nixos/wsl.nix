@@ -9,8 +9,8 @@
 }: {
   imports = [
     inputs.nixos-wsl.nixosModules.default
-    {
-      wsl.enable = true;
-    }
   ];
+
+  wsl.enable = true;
+  wsl.defaultUser = "nixos";
 }

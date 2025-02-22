@@ -11,8 +11,8 @@
 }: {
   # You can import other NixOS modules here
   imports = [
-    # TODO: Import your generated (nixos-generate-config) hardware configuration
-    ./hardware-configuration.nix
+    # TODO: You should munually generate (nixos-generate-config) hardware configuration
+    (if true then ./wsl.nix else ./hardware-configuration.nix)
 
     # If you want to use modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
@@ -22,14 +22,12 @@
     # outputs.nixosModules.my-module
 
     # You can also split up your configuration and import pieces of it here:
-    ./nixpkgs.nix
-    ./nix.nix
-    ./promox.nix
-    ./ssh.nix
+    # ./nixpkgs.nix
+    # ./nix.nix
+    # ./promox.nix
+    # ./ssh.nix
   ];
 
-  # FIXME: Add the rest of your current configuration
-
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "24.11";
+  system.stateVersion = "24.05";
 }

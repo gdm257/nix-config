@@ -1,20 +1,20 @@
 {
-  description = "Your new nix config";
+  description = "All-in-One Nix dotfiles";
 
   inputs = {
+    flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
-    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
-    flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/2405.5.4";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
     localias.url = "github:peterldowns/localias";
     localias.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {
+  outputs = inputs @ {
     self,
     nixpkgs,
     home-manager,
@@ -23,7 +23,7 @@
     nix-vscode-extensions,
     localias,
     ...
-  } @ inputs: let
+  }: let
     inherit (self) outputs;
     # Supported systems for your flake packages, shell, etc.
     systems = [
@@ -38,11 +38,12 @@
     forAllSystems = nixpkgs.lib.genAttrs systems;
 
     # Global variables
-    # FIXME: replace with your machine info
+    # FIXME: Add the rest of your current configuration
     globals.system = "x86_64-linux";
     globals.hostname = "nixos";
     globals.username = "root";
     globals.home = "/root";
+    globals.isNixosWsl = false;
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
@@ -62,8 +63,7 @@
 
     # NixOS configuration entrypoint
     nixosConfigurations = {
-      # FIXME replace with your hostname
-      # Available through 'nixos-rebuild --flake .#your-hostname'
+      # Available through 'nixos-rebuild --flake .#your-hostname' (i.e. globals.hostname)
       ${globals.hostname} = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs globals;};
         modules = [
@@ -71,21 +71,12 @@
           ./nixos/configuration.nix
         ];
       };
-      # Available through 'nixos-rebuild --flake .#nixos'
-      "nixos-wsl" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs globals;};
-        modules = [
-          ./nixos/configuration.nix
-          ./nixos/wsl.nix
-        ];
-      };
     };
 
     # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
+    # Available through 'home-manager --flake .#your-username'
     homeConfigurations = {
-      # FIXME replace with your username@hostname
-      ${globals.username} = home-manager.lib.homeManagerConfiguration {
+      "${globals.username}" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${globals.system}; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs globals;};
         modules = [
