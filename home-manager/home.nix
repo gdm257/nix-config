@@ -15,13 +15,12 @@
     # inputs.nix-colors.homeManagerModules.default
 
     # Or modules your own flake exports (from modules/home-manager):
-    # outputs.homeManagerModules.my-module
+    outputs.homeManagerModules.vim
 
     # You can also split up your configuration and import pieces of it here:
-    ./apps.nix
+    # ./apps.nix
     ./editorconfig.nix
     ./shell.nix
-    ./../modules/home-manager/vim.nix
   ];
 
   nixpkgs = {
@@ -49,13 +48,14 @@
     };
   };
 
-  # TODO: Set your username
+  # FIXME: Set your username
   home = {
     username = globals.username;
     homeDirectory = globals.home;
   };
 
   # Enable home-manager and git
+  home.packages = [ pkgs.home-manager ];
   programs.home-manager.enable = true;
   programs.git.enable = true;
 

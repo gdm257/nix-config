@@ -26,6 +26,7 @@
     ./nix.nix
     ./networking.nix
     ./ssh.nix
+    ./home-manager.nix
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
