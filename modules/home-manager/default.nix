@@ -3,6 +3,7 @@
 {
   # List your module files here
   # my-module = import ./my-module.nix;
+  # access from outputs.homeManagerModules.my-module
 
   # ==== DevOps ====
   bash = import ./bash.nix;

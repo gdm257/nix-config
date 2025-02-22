@@ -4,16 +4,11 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
-
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
-
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-
     localias.url = "github:peterldowns/localias";
     localias.inputs.nixpkgs.follows = "nixpkgs";
   };

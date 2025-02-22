@@ -11,23 +11,21 @@
 }: {
   # You can import other NixOS modules here
   imports = [
-    # If you want to use modules your own flake exports (from modules/nixos):
-    # outputs.nixosModules.example
+    # TODO: Import your generated (nixos-generate-config) hardware configuration
+    ./hardware-configuration.nix
 
-    # Or modules from other flakes (such as nixos-hardware):
+    # If you want to use modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
 
+    # Or modules from your own flake exports (from modules/nixos):
+    # outputs.nixosModules.my-module
+
     # You can also split up your configuration and import pieces of it here:
-    ./promox.nix
-
-    ./ssh.nix
-
-    # Import your generated (nixos-generate-config) hardware configuration
-    ./hardware-configuration.nix
-
     ./nixpkgs.nix
     ./nix.nix
+    ./promox.nix
+    ./ssh.nix
   ];
 
   # FIXME: Add the rest of your current configuration
