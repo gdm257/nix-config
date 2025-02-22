@@ -8,6 +8,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+    flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     localias.url = "github:peterldowns/localias";
     localias.inputs.nixpkgs.follows = "nixpkgs";
