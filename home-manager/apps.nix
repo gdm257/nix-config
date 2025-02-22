@@ -31,6 +31,9 @@
     # Kernel
     fastfetch
 
+    # Layer
+    # libguestfs
+
     # Network
     bandwhich
     curl
