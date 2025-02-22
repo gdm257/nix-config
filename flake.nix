@@ -7,7 +7,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixos-wsl.url = "github:nix-community/NixOS-WSL/2405.5.4";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/2411.6.0";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
     localias.url = "github:peterldowns/localias";
