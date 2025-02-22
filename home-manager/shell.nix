@@ -54,6 +54,9 @@
         # "match_prev_cmd"
       ];
     };
+    history = {
+      save = 65536;
+    };
     defaultKeymap = null; # "emacs" "viins" "vicmd"
     sessionVariables = { };
     initExtraBeforeCompInit = "";
@@ -66,10 +69,40 @@
     localVariables = { };
     plugins = [ ];
     oh-my-zsh = { };
+    prezto = {
+      enable = true;
+      caseSensitive = false;
+      editor.keymap = "emacs"; # vi | emacs
+      prompt.theme = "peepcode"; # peepcode | adam2 | adam1
+      prompt.pwdLength = "long"; # short | long | full
+      prompt.showReturnVal= true;
+      syntaxHighlighting.highlighters = [
+        "main"
+        "brackets"
+        "pattern"
+        "line"
+        "cursor"
+        "root"
+      ];
+      pmodules = [
+        "environment"
+        "terminal"
+        "editor"
+        "history"
+        "directory"
+        "spectrum"
+        "utility"
+        "completion"
+        "prompt"
+      ];
+      # extraModules = [ ];
+      # extraFunctions = [ ];
+    };
   };
   programs.man.enable = true;
   programs.starship = {
     enable = true;
+    enableZshIntegration = false;
     settings = {
       add_newline = true;
       character.success_symbol = "[>](bold green)";
