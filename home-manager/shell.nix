@@ -91,8 +91,10 @@
         "history"
         "directory"
         "spectrum"
+        "archive"
+        "docker"
         "utility"
-        "completion"
+        # "completion" # too slow
         "prompt"
       ];
       # extraModules = [ ];
