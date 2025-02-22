@@ -93,7 +93,7 @@
         "spectrum"
         "archive"
         "docker"
-        "utility"
+        # "utility" # bug: mkdir
         # "completion" # too slow
         "prompt"
       ];
