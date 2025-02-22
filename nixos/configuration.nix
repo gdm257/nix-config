@@ -25,7 +25,7 @@
     # ./nixpkgs.nix
     ./nix.nix
     # ./promox.nix
-    # ./ssh.nix
+    ./ssh.nix
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
