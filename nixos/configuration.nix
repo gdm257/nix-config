@@ -22,7 +22,7 @@
     # outputs.nixosModules.my-module
 
     # You can also split up your configuration and import pieces of it here:
-    # ./nixpkgs.nix
+    ./nixpkgs.nix
     ./nix.nix
     # ./promox.nix
     ./ssh.nix
