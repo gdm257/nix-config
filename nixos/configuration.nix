@@ -23,7 +23,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nixpkgs.nix
-    # ./nix.nix
+    ./nix.nix
     # ./promox.nix
     # ./ssh.nix
   ];
