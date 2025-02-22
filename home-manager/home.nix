@@ -18,9 +18,11 @@
     outputs.homeManagerModules.vim
 
     # You can also split up your configuration and import pieces of it here:
-    # ./apps.nix
     ./editorconfig.nix
     ./shell.nix
+
+    (if globals.isNixosWsl then ./apps.nix else { })
+    (if globals.isPersonalComputer then ./apps.nix else { })
   ];
 
   nixpkgs = {

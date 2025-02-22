@@ -39,11 +39,13 @@
 
     # Global variables
     # FIXME: Add the rest of your current configuration
+    # TODO: Migrate to JSON config file
     globals.system = "x86_64-linux";
     globals.hostname = "nixos";
     globals.username = "root";
     globals.home = "/root";
     globals.isNixosWsl = false;
+    globals.isPersonalComputer = true;
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc

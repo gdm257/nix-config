@@ -26,7 +26,20 @@
     ./nix.nix
     ./networking.nix
     ./ssh.nix
-    ./home-manager.nix
+
+    inputs.home-manager.nixosModules.home-manager
+    (
+      with inputs; {
+        home-manager.useGlobalPkgs = false;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = {inherit inputs outputs globals;};
+        home-manager.users.${globals.username} = (
+          if globals.isNixosWsl then import ./../home-manager/home.nix
+          else if globals.isPersonalComputer then import ./../home-manager/home.nix
+          else import ./../home-manager/home.nix
+        );
+      }
+    )
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
