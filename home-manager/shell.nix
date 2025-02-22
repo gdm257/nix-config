@@ -72,7 +72,7 @@
     prezto = {
       enable = true;
       caseSensitive = false;
-      editor.keymap = "emacs"; # vi | emacs
+      editor.keymap = "vi"; # vi | emacs
       prompt.theme = "peepcode"; # peepcode | adam2 | adam1
       prompt.pwdLength = "long"; # short | long | full
       prompt.showReturnVal= true;
