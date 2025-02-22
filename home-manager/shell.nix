@@ -73,7 +73,7 @@
     settings = {
       add_newline = true;
       character.success_symbol = "[>](bold green)";
-      directory.truncation_length = 0;
+      directory.truncation_length = 10;
       directory.use_os_path_sep = false;
       directory.style = "bold #edc809";
       username.style_user = "green";
@@ -85,8 +85,8 @@
       hostname.format = "[\$ssh_symbol](bold blue)[@\$hostname](green) ";
       hostname.disabled = false;
       status.style = "red bold";
-      status.symbol = "🔴";
-      status.success_symbol = "🟢";
+      status.symbol = "🔴 ";
+      status.success_symbol = "🟢 ";
       status.format = "[\$symbol\$signal_name\$maybe_int](\$style)";
       status.map_symbol = true;
       status.disabled = false;
