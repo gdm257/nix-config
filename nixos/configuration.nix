@@ -26,6 +26,7 @@
     ./nix.nix
     ./networking.nix
     ./ssh.nix
+    ./users.nix
 
     inputs.home-manager.nixosModules.home-manager
     (
