@@ -24,6 +24,7 @@
     # You can also split up your configuration and import pieces of it here:
     ./nixpkgs.nix
     ./nix.nix
+    ./networking.nix
     ./ssh.nix
   ];
 
