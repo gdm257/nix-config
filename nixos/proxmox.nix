@@ -7,19 +7,17 @@
   pkgs,
   ...
 }: {
-  imports = [
-    # Run the Proxmox Hypervisor on top of NixOS
-    inputs.proxmox-nixos.nixosModules.promox-ve
-
+  # Run the Proxmox Hypervisor on top of NixOS
+  imports = let inherit inputs; in [
+    inputs.proxmox-nixos.nixosModules.proxmox-ve
     # FIXME
-    # An inline NixOS module to configure promox
     (
-      { pkgs, lib, ... }: {
-        services.promox-ve = {
+      { inputs, pkgs, lib, ... }: {
+        services.proxmox-ve = {
           enable = true;
           ipAddress = "192.168.0.1";
         };
-        nixpkgs.overlays = [
+        nixpkgs.overlays =[
           inputs.proxmox-nixos.overlays.${globals.system}
         ];
       }
