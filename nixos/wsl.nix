@@ -12,5 +12,5 @@
   ];
 
   wsl.enable = true;
-  wsl.defaultUser = ${globals.username};
+  wsl.defaultUser = globals.username;
 }

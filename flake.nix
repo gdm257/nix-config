@@ -65,6 +65,7 @@
     nixosConfigurations = {
       # Available through 'nixos-rebuild --flake .#your-hostname' (i.e. globals.hostname)
       ${globals.hostname} = nixpkgs.lib.nixosSystem {
+        system = globals.system;
         specialArgs = {inherit inputs outputs globals;};
         modules = [
           # > Our main nixos configuration file <
