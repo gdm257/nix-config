@@ -33,6 +33,9 @@
 
     # Layer
     # libguestfs
+    docker containerlab
+    containerd
+    cri-o
 
     # Network
     bandwhich

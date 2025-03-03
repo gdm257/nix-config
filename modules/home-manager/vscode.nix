@@ -144,6 +144,7 @@
           rogalmic.bash-debug
           mads-hartmann.bash-ide-vscode
           jeff-hykin.better-dockerfile-syntax
+          srl-labs.vscode-containerlab
           jeff-hykin.better-shellscript-syntax
           samuelcolvin.jinjahtml
           mindaro.mindaro
