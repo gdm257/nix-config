@@ -28,6 +28,8 @@
     ./ssh.nix
     ./users.nix
 
+    (if globals.isNixosWsl or globals.isPersonalComputer then ./virtualisation.nix else {})
+
     inputs.home-manager.nixosModules.home-manager
     (
       with inputs; {

@@ -32,10 +32,8 @@
     fastfetch
 
     # Layer
+    containerlab
     # libguestfs
-    docker containerlab
-    containerd
-    cri-o
 
     # Network
     bandwhich
