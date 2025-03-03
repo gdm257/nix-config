@@ -12,7 +12,7 @@
   # You can import other NixOS modules here
   imports = [
     # TODO: You should munually generate (nixos-generate-config) hardware configuration
-    (if true then ./wsl.nix else ./hardware-configuration.nix)
+    (if globals.isNixosWsl then ./wsl.nix else ./hardware-configuration.nix)
 
     # If you want to use modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
