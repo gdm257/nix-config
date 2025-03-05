@@ -169,6 +169,7 @@
           hangxingliu.vscode-systemd-support
           bbenoist.vagrant
           # marcostazi.vs-code-vagrantfile
+          jetpack-io.devbox
 
           # ==== common ====
 

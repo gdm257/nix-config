@@ -15,6 +15,10 @@
     elfutils
     elfkickers
     elf-info
+    go-task
+    devbox
+    devspace
+    devpod
 
     # Downloader
     croc
