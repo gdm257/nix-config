@@ -21,8 +21,7 @@
     ./editorconfig.nix
     ./shell.nix
 
-    (if globals.isNixosWsl then ./apps.nix else { })
-    (if globals.isPersonalComputer then ./apps.nix else { })
+    ./apps.nix
   ];
 
   nixpkgs = {
