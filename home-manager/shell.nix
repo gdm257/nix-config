@@ -11,7 +11,6 @@
   home.shellAliases = {
     ".." = "cd ..";
     "..." = "cd ../..";
-    z = "zoxide";
   };
   # home.sessionVariables = { };
 
