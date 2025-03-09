@@ -12,7 +12,13 @@
     ".." = "cd ..";
     "..." = "cd ../..";
   };
-  # home.sessionVariables = { };
+  home.sessionVariables = {
+    HOMEBREW_PREFIX = "/home/linuxbrew";
+  };
+  home.sessionPath = [
+    "${config.home.sessionVariables.HOMEBREW_PREFIX}/bin"
+    "${config.home.sessionVariables.HOMEBREW_PREFIX}/sbin"
+  ];
 
   # ==== Shell programs ====
   programs.bash = {

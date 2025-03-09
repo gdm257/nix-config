@@ -56,7 +56,6 @@
   };
 
   # Enable home-manager and git
-  home.packages = [ ];
   programs.home-manager.enable = true;
   programs.git.enable = true;
 
