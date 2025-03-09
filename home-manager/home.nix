@@ -57,7 +57,7 @@
   };
 
   # Enable home-manager and git
-  home.packages = [ pkgs.home-manager ];
+  home.packages = [ ];
   programs.home-manager.enable = true;
   programs.git.enable = true;
 
