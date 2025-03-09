@@ -56,7 +56,7 @@
   };
 
   # Enable home-manager and git
-  programs.home-manager.enable = true;
+  home.packages = [ pkgs.home-manager ];
   programs.git.enable = true;
 
   # Nicely reload system units when changing configs
