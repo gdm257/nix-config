@@ -14,6 +14,7 @@
   java = import ./java.nix;
   javascript = import ./javascript.nix;
   lua = import ./lua.nix;
+  nix = import ./nix.nix;
   python = import ./python.nix;
   rust = import ./rust.nix;
   binary = import ./binary.nix;
