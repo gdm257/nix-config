@@ -16,6 +16,7 @@
 
     # Or modules your own flake exports (from modules/home-manager):
     outputs.homeManagerModules.vim
+    outputs.homeManagerModules.nix
 
     # You can also split up your configuration and import pieces of it here:
     ./editorconfig.nix
