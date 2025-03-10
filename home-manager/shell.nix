@@ -7,13 +7,12 @@
   pkgs,
   ...
 }: {
-  # home.sessionPath = [ ];
   home.shellAliases = {
     ".." = "cd ..";
     "..." = "cd ../..";
   };
   home.sessionVariables = {
-    HOMEBREW_PREFIX = "/home/linuxbrew";
+    HOMEBREW_PREFIX = "/home/linuxbrew/.linuxbrew";
   };
   home.sessionPath = [
     "${config.home.sessionVariables.HOMEBREW_PREFIX}/bin"
