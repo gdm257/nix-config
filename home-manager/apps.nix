@@ -36,8 +36,18 @@
     fastfetch
 
     # Layer
+    cntr
     containerlab
-    # libguestfs
+    ctop
+    lazydocker
+    kompose
+    helm
+    k3d
+    k9s
+    krew
+    kubectx
+    velero
+    # libguestfs # too large
 
     # Network
     bandwhich
