@@ -7,20 +7,31 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixos-wsl.url = "github:nix-community/NixOS-WSL/2411.6.0";
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+    nix-alien.url = "github:thiagokokada/nix-alien";
+    nix-alien.inputs.flake-compat.follows = "flake-compat";
+    nix-alien.inputs.nixpkgs.follows = "nixpkgs";
+    nix-alien.inputs.nix-index-database.follows = "nix-index-database";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/2411.6.0";
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
+    proxmox-nixos.inputs.flake-compat.follows = "flake-compat";
     localias.url = "github:peterldowns/localias";
     localias.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs @ {
     self,
+    flake-compat,
     nixpkgs,
+    nixpkgs-unstable,
     home-manager,
-    proxmox-nixos,
-    nixos-wsl,
+    nix-index-database,
+    nix-alien,
     nix-vscode-extensions,
+    nixos-wsl,
+    proxmox-nixos,
     localias,
     ...
   }: let
