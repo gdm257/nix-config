@@ -42,6 +42,7 @@
     lazydocker
     kompose
     helm
+    k3sup
     k3d
     k9s
     krew
