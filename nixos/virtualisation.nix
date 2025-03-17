@@ -22,7 +22,7 @@
   };
 
   services.k3s = {
-    enable = true;
+    enable = false;
     package = pkgs.k3s_1_28; # override if you want to specify k3s version
     role = "server";
     clusterInit = true;
