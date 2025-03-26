@@ -15,7 +15,7 @@
   # programs.nix-index.enable = true;
 
   home.packages = with pkgs; [
-    nix
+    # nix
     nix-derivation
     nix-init
     nix-tree
