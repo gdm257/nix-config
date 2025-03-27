@@ -60,6 +60,7 @@
     globals.isNixosWsl = false;
     globals.isPersonalComputer = true;
     globals.isDesktop = false;
+    globals.isSteamDeck = false;
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
