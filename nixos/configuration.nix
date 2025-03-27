@@ -28,7 +28,7 @@
     ./ssh.nix
     ./users.nix
 
-    (if globals.isNixosWsl or globals.isPersonalComputer then ./virtualisation.nix else {})
+    (if globals.isNixosWsl || globals.isPersonalComputer then ./virtualisation.nix else {})
 
     (if globals.isDesktop then inputs.nix-flatpak.nixosModules.nix-flatpak else {})
     (
