@@ -23,6 +23,9 @@
     ./shell.nix
 
     ./apps.nix
+
+    (if globals.isDesktop then inputs.nix-flatpak.homeManagerModules.nix-flatpak else {})
+    (if globals.isDesktop then ./flatpak.nix else {})
   ];
 
   nixpkgs = {

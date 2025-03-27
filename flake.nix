@@ -13,6 +13,7 @@
     nix-alien.inputs.flake-compat.follows = "flake-compat";
     nix-alien.inputs.nixpkgs.follows = "nixpkgs";
     nix-alien.inputs.nix-index-database.follows = "nix-index-database";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/2411.6.0";
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
@@ -29,6 +30,7 @@
     home-manager,
     nix-index-database,
     nix-alien,
+    nix-flatpak,
     nix-vscode-extensions,
     nixos-wsl,
     proxmox-nixos,
@@ -57,6 +59,7 @@
     globals.home = "/root";
     globals.isNixosWsl = false;
     globals.isPersonalComputer = true;
+    globals.isDesktop = false;
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc

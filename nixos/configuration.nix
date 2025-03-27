@@ -30,6 +30,24 @@
 
     (if globals.isNixosWsl or globals.isPersonalComputer then ./virtualisation.nix else {})
 
+    (if globals.isDesktop then inputs.nix-flatpak.nixosModules.nix-flatpak else {})
+    (
+      if globals.isDesktop
+      then {
+        xdg.portal= {
+          enable = true;
+          extraPortals = with pkgs; [
+            xdg-desktop-portal-wlr
+            # xdg-desktop-portal-kde
+            # xdg-desktop-portal-gnome
+            # xdg-desktop-portal-gtk
+          ];
+        };
+      }
+      else {}
+    )
+    (if globals.isDesktop then ./flatpak.nix else {})
+
     inputs.home-manager.nixosModules.home-manager
     (
       with inputs; {
