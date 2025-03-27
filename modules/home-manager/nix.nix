@@ -12,10 +12,9 @@
       programs.nix-index-database.comma.enable = true;
     }
   ];
-  # programs.nix-index.enable = true;
+  # programs.nix-index.enable = true; # disable if nix-index-database is used
 
   home.packages = with pkgs; [
-    # nix
     nix-derivation
     nix-init
     nix-tree
