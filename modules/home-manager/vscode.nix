@@ -6,13 +6,12 @@
   ...
 }: {
   programs.vscode = {
-    # TODO: FIXME
+    # FIXME
     enable = false;
     package = pkgs.vscodium;
     extensions =
       let
         pkgs-vscode-extensions = with pkgs.vscode-extensions; [ ];
-        # TODO: FIXME
         vscode-marketplace-release-extensions = with inputs.nix-vscode-extensions.extensions.${globals.system}.vscode-marketplace-release; [ ];
         vscode-marketplace-extensions = with inputs.nix-vscode-extensions.extensions.${globals.system}.vscode-marketplace; [
           # assembly
@@ -272,7 +271,89 @@
     mutableExtensionsDir = true;
     userSettings = { };
     userTasks = { };
-    keybindings = [ ];
+    keybindings = [
+      {
+        key = "ctrl+p";
+        command = "workbench.action.showCommands";
+      }
+      {
+        key = "ctrl+shift+p";
+        command = "workbench.action.quickOpen";
+      }
+      {
+        key = "ctrl+shift+p";
+        command = "workbench.action.quickOpenNavigateNextInFilePicker";
+        when = "inFilesPicker && inQuickOpen";
+      }
+      {
+        key = "ctrl+tab";
+        command = "workbench.action.nextEditor";
+      }
+      {
+        key = "ctrl+shift+tab";
+        command = "workbench.action.previousEditor";
+      }
+      {
+        key = "ctrl+oem_plus";
+        command = "-workbench.action.zoomIn";
+      }
+      {
+        key = "ctrl+oem_minus";
+        command = "-workbench.action.zoomOut";
+      }
+      {
+        key = "ctrl+shift+oem_minus";
+        command = "-workbench.action.zoomOut";
+      }
+      {
+        key = "ctrl+numpad_subtract";
+        command = "-workbench.action.zoomOut";
+      }
+      {
+        key = "ctrl+shift+oem_plus";
+        command = "-workbench.action.zoomIn";
+      }
+      {
+        key = "ctrl+numpad_add";
+        command = "-workbench.action.zoomIn";
+      }
+      {
+        key = "ctrl+numpad0";
+        command = "-workbench.action.zoomReset";
+      }
+      {
+        key = "alt+p";
+        command = "workbench.action.showCommands";
+      }
+      {
+        key = "alt+k h";
+        command = "editor.action.triggerSuggest";
+        when = "editorHasCompletionItemProvider && textInputFocus && !editorReadonly";
+      }
+      {
+        key = "alt+k h";
+        command = "toggleSuggestionDetails";
+        when = "suggestWidgetVisible && textInputFocus";
+      }
+      {
+        key = "alt+k p";
+        command = "editor.action.triggerParameterHints";
+        when = "editorHasSignatureHelpProvider && editorTextFocus";
+      }
+      {
+        key = "alt+k p";
+        command = "issue.suggestRefresh";
+        when = "suggestWidgetVisible";
+      }
+      {
+        key = "alt+k b";
+        command = "workbench.action.toggleSidebarVisibility";
+      }
+      {
+        key = "alt+k shift+b";
+        command = "workbench.action.toggleAuxiliaryBar";
+      }
+    ];
     globalSnippets = { };
     languageSnippets = { };
     haskell.enable = false;
