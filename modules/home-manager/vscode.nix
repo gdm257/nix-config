@@ -269,94 +269,379 @@
         ++ open-vsx-extensions
       ;
     mutableExtensionsDir = true;
-    userSettings = { };
     userTasks = { };
-    keybindings = [
-      {
-        key = "ctrl+p";
-        command = "workbench.action.showCommands";
-      }
-      {
-        key = "ctrl+shift+p";
-        command = "workbench.action.quickOpen";
-      }
-      {
-        key = "ctrl+shift+p";
-        command = "workbench.action.quickOpenNavigateNextInFilePicker";
-        when = "inFilesPicker && inQuickOpen";
-      }
-      {
-        key = "ctrl+tab";
-        command = "workbench.action.nextEditor";
-      }
-      {
-        key = "ctrl+shift+tab";
-        command = "workbench.action.previousEditor";
-      }
-      {
-        key = "ctrl+oem_plus";
-        command = "-workbench.action.zoomIn";
-      }
-      {
-        key = "ctrl+oem_minus";
-        command = "-workbench.action.zoomOut";
-      }
-      {
-        key = "ctrl+shift+oem_minus";
-        command = "-workbench.action.zoomOut";
-      }
-      {
-        key = "ctrl+numpad_subtract";
-        command = "-workbench.action.zoomOut";
-      }
-      {
-        key = "ctrl+shift+oem_plus";
-        command = "-workbench.action.zoomIn";
-      }
-      {
-        key = "ctrl+numpad_add";
-        command = "-workbench.action.zoomIn";
-      }
-      {
-        key = "ctrl+numpad0";
-        command = "-workbench.action.zoomReset";
-      }
-      {
-        key = "alt+p";
-        command = "workbench.action.showCommands";
-      }
-      {
-        key = "alt+k h";
-        command = "editor.action.triggerSuggest";
-        when = "editorHasCompletionItemProvider && textInputFocus && !editorReadonly";
-      }
-      {
-        key = "alt+k h";
-        command = "toggleSuggestionDetails";
-        when = "suggestWidgetVisible && textInputFocus";
-      }
-      {
-        key = "alt+k p";
-        command = "editor.action.triggerParameterHints";
-        when = "editorHasSignatureHelpProvider && editorTextFocus";
-      }
-      {
-        key = "alt+k p";
-        command = "issue.suggestRefresh";
-        when = "suggestWidgetVisible";
-      }
-      {
-        key = "alt+k b";
-        command = "workbench.action.toggleSidebarVisibility";
-      }
-      {
-        key = "alt+k shift+b";
-        command = "workbench.action.toggleAuxiliaryBar";
-      }
-    ];
     globalSnippets = { };
     languageSnippets = { };
     haskell.enable = false;
     haskell.hie.enable = false;
   };
+  programs.vscode.userSettings = {
+    # ==== Format specific ====
+    "[markdown]" = {
+      "editor.codeLens" = false;
+      "editor.fontFamily" = "'LXGW WenKai Mono', 'Sarasa Mono SC'";
+      "editor.fontSize" = 20.5;
+      "editor.defaultFormatter" = "DavidAnson.vscode-markdownlint";
+    };
+    "[json]" = {
+      "editor.defaultFormatter" = "vscode.json-language-features";
+    };
+    "[jsonc]" = {
+      "editor.defaultFormatter" = "vscode.json-language-features";
+    };
+    "[yaml]" = {
+      "editor.tabSize" = 4;
+      "editor.defaultFormatter" = "redhat.vscode-yaml";
+    };
+    "[typescript]" = {
+      "editor.defaultFormatter" = "vscode.typescript-language-features";
+    };
+    "[javascript]" = {
+      "editor.defaultFormatter" = "vscode.typescript-language-features";
+    };
+    "[css]" = {
+      "editor.defaultFormatter" = "vscode.css-language-features";
+    };
+    "[html]" = {
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "editor.wordWrap" = "on";
+    };
+    "[jinja-html]" = {
+      "editor.tabSize" = 2;
+    };
+    "[django-html]" = {
+      "editor.wordWrap" = "on";
+      "editor.quickSuggestions" = {
+        "other" = true;
+        "comments" = true;
+        "strings" = true;
+      };
+      "editor.tabSize" = 2;
+      "editor.defaultFormatter" = "junstyle.vscode-django-support";
+    };
+    # ==== AI ====
+    "intelephense.files.exclude" = [
+      "**/.hg/**"
+      "**/CVS/**"
+      "**/.DS_Store/**"
+      "**/node_modules/**"
+      "**/bower_components/**"
+      "**/vendor/**/{Tests,tests}/**"
+      "**/.history/**"
+      "**/vendor/**/vendor/**"
+    ];
+    "path-intellisense.showHiddenFiles" = true;
+    "Codegeex.Privacy" = false;
+    "CodeGPT.query.language" = "Chinese";
+    "codium.enable" = true;
+    "tabnine.experimentalAutoImports" = true;
+    # ==== Git ====
+    "git.closeDiffOnOperation" = true;
+    "git.ignoreLegacyWarning" = true;
+    "github.copilot.chat.generateTests.codeLens" = true;
+    "githubPullRequests.experimental.chat" = true;
+    "githubPullRequests.experimental.useQuickChat" = true;
+    "githubIssues.queries" = [
+      {
+        "label" = "My Issues";
+        "query" = "default";
+      }
+      {
+        "label" = "Created Issues";
+        "query" = "author:${user} state:open repo:${owner}/${repository} sort:created-desc";
+      }
+      {
+        "label" = "Recent Issues";
+        "query" = "state:open repo:${owner}/${repository} sort:updated-desc";
+      }
+    ];
+    "gitlens.currentLine.enabled" = false;
+    "gitlens.advanced.messages" = {
+      "suppressGitVersionWarning" = true;
+    };
+    # ==== Markdown ====
+    "markdown-preview-enhanced.previewTheme" = "monokai.css";
+    "markdown.preview.fontSize" = 16;
+    # ==== Java ====
+    "java.codeGeneration.generateComments" = true;
+    "java.codeGeneration.useBlocks" = true;
+    "java.debug.logLevel" = "info";
+    "java.maven.downloadSources" = true;
+    "kotlin.debugAdapter.enabled" = false;
+    "kotlin.languageServer.enabled" = false;
+    "maven.pomfile.autoUpdateEffectivePOM" = true;
+    # ==== JS/TS ====
+    "typescript.suggest.paths" = true;
+    # ==== LaTeX ====
+    "latex-workshop.bibtex-format.tab" = "4 spaces";
+    "latex-workshop.latex.autoClean.run" = "onFailed";
+    "latex-workshop.latex.recipe.default" = "lastUsed";
+    "latex-workshop.view.pdf.viewer" = "tab";
+    "matlab.linterConfig" = "D:\\apps\\MATLAB\\R2018b\\bin\\win64\\mlint.exe";
+    "matlab.matlabpath" = "D:\\apps\\MATLAB\\R2018b\\bin\\win64\\MATLAB.exeb";
+    "matlab.mlintpath" = "D:\\apps\\MATLAB\\R2018b\\bin\\win64\\mlint.exe";
+    # ==== Python ====
+    "black-formatter.args" = [
+      "--skip-string-normalization"
+    ];
+    "isort.args" = [
+      "--profile"
+      "black"
+    ];
+    "isort.logLevel" = "debug";
+    "jupyter.interactiveWindow.textEditor.autoAddNewCell" = false;
+    "jupyter.interactiveWindow.textEditor.autoMoveToNextCell" = false;
+    "python.condaPath" = "micromamba";
+    "python.createEnvironment.contentButton" = "show";
+    "python.autoComplete.extraPaths" = [
+      "__pypackages__/2.7/lib"
+      "__pypackages__/3.4/lib"
+      "__pypackages__/3.5/lib"
+      "__pypackages__/3.6/lib"
+      "__pypackages__/3.7/lib"
+      "__pypackages__/3.8/lib"
+      "__pypackages__/3.9/lib"
+      "__pypackages__/3.10/lib"
+      "__pypackages__/3.11/lib"
+      "__pypackages__/3.12/lib"
+      "__pypackages__/3.13/lib"
+      "__pypackages__/3.14/lib"
+      "__pypackages__/3.15/lib"
+      "__pypackages__/3.16/lib"
+      "__pypackages__/3.17/lib"
+      "__pypackages__/3.18/lib"
+      "__pypackages__/3.19/lib"
+      "__pypackages__/3.20/lib"
+      "__pypackages__/3.21/lib"
+      "__pypackages__/3.22/lib"
+      "__pypackages__/3.23/lib"
+      "__pypackages__/3.24/lib"
+      "__pypackages__/3.25/lib"
+      "__pypackages__/3.26/lib"
+      "__pypackages__/3.27/lib"
+      "__pypackages__/3.28/lib"
+      "__pypackages__/3.29/lib"
+      "__pypackages__/3.30/lib"
+      "__pypackages__/3.31/lib"
+      "__pypackages__/3.32/lib"
+      "__pypackages__/3.33/lib"
+    ];
+    "notebook.cellToolbarLocation" = {
+      "default" = "right";
+      "jupyter-notebook" = "left";
+      "runme" = "right";
+    };
+    "notebook.lineNumbers" = "on";
+    "notebook.outline.showCodeCells" = true;
+    # ==== UI ====
+    "debug.console.wordWrap" = false;
+    "diffEditor.experimental.showMoves" = true;
+    "editor.bracketPairColorization.enabled" = true;
+    "editor.find.autoFindInSelection" = "multiline";
+    "editor.fontFamily" = "'JetBrains Mono', Sarasa Mono SC, monospace";
+    "editor.fontSize" = 18;
+    "editor.guides.highlightActiveIndentation" = "always";
+    "editor.renderControlCharacters" = true;
+    "editor.renderLineHighlight" = "gutter";
+    "editor.renderWhitespace" = "none";
+    "editor.roundedSelection" = false;
+    "editor.scrollbar.vertical" = "visible";
+    "editor.unicodeHighlight.ambiguousCharacters" = false;
+    "editor.unicodeHighlight.invisibleCharacters" = false;
+    "editor.wordWrap" = "off";
+    "editor.minimap.enabled" = false;
+    "editor.cursorSmoothCaretAnimation" = "off";
+    "explorer.autoReveal" = false;
+    "explorer.copyRelativePathSeparator" = "/";
+    "window.zoomLevel" = 1.5;
+    "workbench.colorTheme" = "Monokai";
+    "background.style" = {
+      "opacity" = 0.95;
+    };
+    "background.useFront" = false;
+    "osumode.enableCursorExplosions" = false;
+    "osumode.explosionSize" = 3;
+    "osumode.comboImageInterval" = 25;
+    "osumode.enableComboCounter" = false;
+    # ==== Common ====
+    "files.associations" = {
+      "*.cheat" = "shellscript";
+    };
+    "files.eol" = "\n";
+    "files.exclude" = {
+      "**/.git" = false;
+      "**/.svn" = false;
+    };
+    "json.maxItemsComputed" = 5001;
+    "redhat.telemetry.enabled" = false;
+    "resmon.disk.format" = "Remaining";
+    "resmon.show.battery" = false;
+    "resmon.show.cpufreq" = false;
+    "resmon.show.mem" = false;
+    "scm.inputFontSize" = 17;
+    "security.workspace.trust.enabled" = false;
+    "settingsSync.ignoredExtensions" = [
+      "lhl2617.vslilypond"
+    ];
+    "settingsSync.ignoredSettings" = [
+      "black-formatter.interpreter"
+      "-window.zoomLevel"
+      "terminal.integrated.profiles.windows"
+      "http.proxy"
+      "projectManager.git.baseFolders"
+      "ahk++.file.interpreterPathV2"
+      "AutoHotkey2.InterpreterPath"
+      "AutoHotkey2.CompilerCMD"
+      "terminal.integrated.fontFamily"
+      "terminal.integrated.fontSize"
+      "ahk++.file.interpreterPathV1"
+      "ahk++.file.helpPathV2"
+      "ahk++.file.helpPathV1"
+      "ahk++.file.compilerPath"
+    ];
+    "terminal.integrated.allowChords" = false;
+    "terminal.integrated.copyOnSelection" = true;
+    "terminal.integrated.defaultProfile.windows" = "PowerShell";
+    "terminal.integrated.fontSize" = 17;
+    "terminal.integrated.profiles.windows" = {
+      "Bash" = {
+        "icon" = "terminal-linux";
+        "path" = "cmd";
+        "args" = [
+          "/c"
+          "%GIT_INSTALL_ROOT%\\bin\\sh"
+          "--login"
+          "-i"
+        ];
+      };
+      "PowerShell Core" = {
+        "icon" = "terminal-powershell";
+        "path" = "pwsh";
+      };
+      "CMD" = {
+        "icon" = "terminal-cmd";
+        "path" = "cmd";
+      };
+    };
+    "terminal.integrated.rightClickBehavior" = "default";
+    "terminal.integrated.scrollback" = 32000;
+    "update.enableWindowsBackgroundUpdates" = false;
+    "update.mode" = "manual";
+    "vscode-office.previewCode" = false;
+    "vscode-office.viewAbsoluteLocal" = true;
+    "vsintellicode.modify.editor.suggestSelection" = "automaticallyOverrodeDefaultValue";
+    "window.doubleClickIconToClose" = true;
+    "window.newWindowDimensions" = "offset";
+    "workbench.editorAssociations" = {
+      "*.html" = "default";
+    };
+    "workbench.startupEditor" = "none";
+    "workbench.tree.expandMode" = "singleClick";
+    "yaml.maxItemsComputed" = 30000;
+    "sqltools.results.limit" = 100;
+    "window.restoreWindows" = "none";
+    "bangumiOpen.EnableReminder" = false;
+    "errorLens.exclude" = [
+      "unknown word"
+    ];
+    "vim.camelCaseMotion.enable" = true;
+    "vim.easymotion" = true;
+    "vim.replaceWithRegister" = false;
+    "vim.foldfix" = true;
+    "vim.incsearch" = true;
+    "vim.showMarksInGutter" = true;
+    "vim.useSystemClipboard" = true;
+    "vim.useCtrlKeys" = true;
+    "vim.matchpairs" = "(:),{:},[:],<:>,（:）,《:》,【:】,「:」,『:』,＜:＞,［:］,｛:｝,\":\",＂:＂";
+    "workbench.iconTheme" = "vscode-great-icons";
+    "makefile.configureOnOpen" = true;
+    "remote.defaultExtensionsIfInstalledLocally" = [
+      "GitHub.copilot"
+      "GitHub.copilot-chat"
+      "GitHub.vscode-pull-request-github"
+    ];
+  };
+  programs.vscode.keybindings = [
+    {
+      key = "ctrl+p";
+      command = "workbench.action.showCommands";
+    }
+    {
+      key = "ctrl+shift+p";
+      command = "workbench.action.quickOpen";
+    }
+    {
+      key = "ctrl+shift+p";
+      command = "workbench.action.quickOpenNavigateNextInFilePicker";
+      when = "inFilesPicker && inQuickOpen";
+    }
+    {
+      key = "ctrl+tab";
+      command = "workbench.action.nextEditor";
+    }
+    {
+      key = "ctrl+shift+tab";
+      command = "workbench.action.previousEditor";
+    }
+    {
+      key = "ctrl+oem_plus";
+      command = "-workbench.action.zoomIn";
+    }
+    {
+      key = "ctrl+oem_minus";
+      command = "-workbench.action.zoomOut";
+    }
+    {
+      key = "ctrl+shift+oem_minus";
+      command = "-workbench.action.zoomOut";
+    }
+    {
+      key = "ctrl+numpad_subtract";
+      command = "-workbench.action.zoomOut";
+    }
+    {
+      key = "ctrl+shift+oem_plus";
+      command = "-workbench.action.zoomIn";
+    }
+    {
+      key = "ctrl+numpad_add";
+      command = "-workbench.action.zoomIn";
+    }
+    {
+      key = "ctrl+numpad0";
+      command = "-workbench.action.zoomReset";
+    }
+    {
+      key = "alt+p";
+      command = "workbench.action.showCommands";
+    }
+    {
+      key = "alt+k h";
+      command = "editor.action.triggerSuggest";
+      when = "editorHasCompletionItemProvider && textInputFocus && !editorReadonly";
+    }
+    {
+      key = "alt+k h";
+      command = "toggleSuggestionDetails";
+      when = "suggestWidgetVisible && textInputFocus";
+    }
+    {
+      key = "alt+k p";
+      command = "editor.action.triggerParameterHints";
+      when = "editorHasSignatureHelpProvider && editorTextFocus";
+    }
+    {
+      key = "alt+k p";
+      command = "issue.suggestRefresh";
+      when = "suggestWidgetVisible";
+    }
+    {
+      key = "alt+k b";
+      command = "workbench.action.toggleSidebarVisibility";
+    }
+    {
+      key = "alt+k shift+b";
+      command = "workbench.action.toggleAuxiliaryBar";
+    }
+  ];
 }
