@@ -174,6 +174,7 @@
 
           # ai
           codeium.codeium
+          # augment.vscode-augment
           # continue.continue
           # dreamlight.aline
           # coolcline.coolcline
