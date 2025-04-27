@@ -173,6 +173,13 @@
           # ==== common ====
 
           # ai
+          github.copilot
+          github.copilot-chat
+          # ms-vscode.vscode-websearchforcopilot
+          # ms-vscode.copilot-mermaid-diagram
+          # automatalabs.copilot-mcp
+          # cpulvermacher.lgtm
+          # dbcode.dbcode
           codeium.codeium
           # augment.vscode-augment
           # continue.continue
@@ -180,8 +187,6 @@
           # coolcline.coolcline
           # rooveterinaryinc.roo-cline
           # saoudrizwan.claude-dev
-          # github.copilot
-          # github.copilot-chat
           # codium.codium
           # aminer.codegeex
           # danielsanmedium.dscodegpt
@@ -335,13 +340,15 @@
     "Codegeex.Privacy" = false;
     "CodeGPT.query.language" = "Chinese";
     "codium.enable" = true;
+    "github.copilot.chat.generateTests.codeLens" = true;
+    "github.copilot.codesearch.enabled" = true;
+    "github.copilot.nextEditSuggestions.enabled" = true;
+    "githubPullRequests.experimental.chat" = true;
+    "githubPullRequests.experimental.useQuickChat" = true;
     "tabnine.experimentalAutoImports" = true;
     # ==== Git ====
     "git.closeDiffOnOperation" = true;
     "git.ignoreLegacyWarning" = true;
-    "github.copilot.chat.generateTests.codeLens" = true;
-    "githubPullRequests.experimental.chat" = true;
-    "githubPullRequests.experimental.useQuickChat" = true;
     "githubIssues.queries" = [
       {
         "label" = "My Issues";
