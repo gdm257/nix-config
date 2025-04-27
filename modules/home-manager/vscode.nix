@@ -62,6 +62,7 @@
           mariusschulz.yarn-lock-syntax
           ms-vscode.live-server
           ritwickdey.liveserver
+          swmansion.react-native-ide
           msjsdiag.vscode-react-native
           octref.vetur
           otovo-oss.htmx-tags
