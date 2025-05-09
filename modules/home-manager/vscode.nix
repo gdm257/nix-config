@@ -182,6 +182,7 @@
           # cpulvermacher.lgtm
           # dbcode.dbcode
           codeium.codeium
+          # marscode.marscode-extension
           # augment.vscode-augment
           # continue.continue
           # dreamlight.aline
