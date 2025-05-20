@@ -6,7 +6,13 @@
   config,
   pkgs,
   ...
-}: {
+}:
+let
+  init_extra = ''
+    [ ! -f "$HOMEBREW_PREFIX/bin/brew" ] || eval "$($HOMEBREW_PREFIX/bin/brew shellenv)";
+  '';
+in
+{
   home.shellAliases = {
     ".." = "cd ..";
     "..." = "cd ../..";
@@ -33,7 +39,10 @@
     sessionVariables = { };
     shellAliases = { };
     profileExtra = "";
-    initExtra = "";
+    initExtra = ''
+      ${init_extra};
+      [ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X";
+    '';
     bashrcExtra = "";
     logoutExtra = "";
   };
@@ -64,7 +73,9 @@
     defaultKeymap = null; # "emacs" "viins" "vicmd"
     sessionVariables = { };
     initExtraBeforeCompInit = "";
-    initExtra = "";
+    initExtra = ''
+      ${init_extra};
+    '';
     initExtraFirst = "";
     envExtra = "";
     profileExtra = "";
