@@ -40,7 +40,7 @@ in
     shellAliases = { };
     profileExtra = "";
     initExtra = ''
-      ${init_extra};
+      ${init_extra}
       [ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X";
     '';
     bashrcExtra = "";
@@ -74,7 +74,7 @@ in
     sessionVariables = { };
     initExtraBeforeCompInit = "";
     initExtra = ''
-      ${init_extra};
+      ${init_extra}
     '';
     initExtraFirst = "";
     envExtra = "";
