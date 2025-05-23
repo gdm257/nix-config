@@ -54,7 +54,7 @@
     # FIXME: Add the rest of your current configuration
     # TODO: Migrate to JSON config file
     globals.system = "x86_64-linux";
-    globals.hostname = "nixos";
+    globals.hostname = builtins.getEnv "HOSTNAME";
     globals.username = "root";
     globals.home = "/root";
     globals.isNixosWsl = false;
