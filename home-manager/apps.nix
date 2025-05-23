@@ -23,6 +23,7 @@
     # Downloader
     croc
     rclone
+    eget
 
     # File
     age
