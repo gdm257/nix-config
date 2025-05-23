@@ -153,4 +153,8 @@ in
   };
   programs.zellij.enable = true;
   programs.zoxide.enable = true;
+  programs.zoxide.enableBashIntegration = true;
+  programs.zoxide.enableFishIntegration = true;
+  programs.zoxide.enableNushellIntegration = true;
+  programs.zoxide.enableZshIntegration = true;
 }
