@@ -10,6 +10,7 @@
 let
   init_extra = ''
     [ ! -f "$HOMEBREW_PREFIX/bin/brew" ] || eval "$($HOMEBREW_PREFIX/bin/brew shellenv)";
+    [ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X";
   '';
 in
 {
@@ -41,7 +42,6 @@ in
     profileExtra = "";
     initExtra = ''
       ${init_extra}
-      [ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X";
     '';
     bashrcExtra = "";
     logoutExtra = "";
