@@ -120,6 +120,7 @@
           ms-python.python
           ms-python.vscode-pylance
           ms-python.debugpy
+          gaogaotiantian.coredumpy-vscode
           njpwerner.autodocstring
           rodolphebarbanneau.python-docstring-highlighter
           seanwu.vscode-qt-for-python
