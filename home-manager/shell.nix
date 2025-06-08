@@ -22,6 +22,7 @@ in
     HOMEBREW_PREFIX = "/home/linuxbrew/.linuxbrew";
   };
   home.sessionPath = [
+    "$HOME/.local/bin"
     "${config.home.sessionVariables.HOMEBREW_PREFIX}/bin"
     "${config.home.sessionVariables.HOMEBREW_PREFIX}/sbin"
   ];
