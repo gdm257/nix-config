@@ -41,7 +41,8 @@
     ctop
     lazydocker
     kompose
-    helm
+    kubernetes-helm
+    helmfile
     k3sup
     k3d
     k9s
