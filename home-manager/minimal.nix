@@ -55,9 +55,10 @@
     enable = true;
     settings =
       {
-        mgr = {
+        manager = {
           linemode = "size";
           ratio = [1 3 3];
+          show_hidden = true;
         };
         preview = {
           image_filter = "lanczos3";
