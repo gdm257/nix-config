@@ -57,6 +57,7 @@
     globals.hostname = builtins.getEnv "HOSTNAME";
     globals.username = "root";
     globals.home = "/root";
+    globals.isMinimal = true;
     globals.isNixosWsl = false;
     globals.isPersonalComputer = true;
     globals.isDesktop = false;

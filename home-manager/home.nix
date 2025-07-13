@@ -22,7 +22,8 @@
     ./editorconfig.nix
     ./shell.nix
 
-    ./apps.nix
+    ./minimal.nix
+    # ./apps.nix
 
     (if globals.isDesktop then inputs.nix-flatpak.homeManagerModules.nix-flatpak else {})
     (if globals.isDesktop then ./flatpak.nix else {})
@@ -54,7 +55,6 @@
     };
   };
 
-  # FIXME: Set your username
   home = {
     username = globals.username;
     homeDirectory = globals.home;
