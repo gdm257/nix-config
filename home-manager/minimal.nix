@@ -19,6 +19,7 @@
     # File
     duf
     fd
+    file
 
     # Kernel
     fastfetch
@@ -35,6 +36,9 @@
     pstree
 
     # Shell
+    util-linux
+    uutils-coreutils
+    uutils-coreutils-noprefix
 
     # Text
   ];
