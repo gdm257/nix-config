@@ -51,17 +51,24 @@
     forAllSystems = nixpkgs.lib.genAttrs systems;
 
     # Global variables
-    # FIXME: Add the rest of your current configuration
-    # TODO: Migrate to JSON config file
-    globals.system = "x86_64-linux";
-    globals.hostname = builtins.getEnv "HOSTNAME";
-    globals.username = "root";
-    globals.home = "/root";
-    globals.isMinimal = true;
-    globals.isNixosWsl = false;
-    globals.isPersonalComputer = true;
-    globals.isDesktop = false;
-    globals.isSteamDeck = false;
+    readJSON = path: builtins.fromJSON (builtins.readFile path);
+    baseConfig = readJSON ./config.default.json;
+    customConfig =
+      if builtins.pathExists ./config.json
+      then readJSON ./config.json
+      else {};
+    mergedConfig = nixpkgs.lib.recursiveUpdate baseConfig customConfig;
+    config =
+      mergedConfig // {
+        hostname =
+          if mergedConfig ? hostname then mergedConfig.hostname
+          else
+            if builtins.getEnv "HOSTNAME" != "" then builtins.getEnv "HOSTNAME"
+            else "nixos"
+        ;
+      }
+    ;
+    globals = config;
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
