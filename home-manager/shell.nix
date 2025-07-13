@@ -10,7 +10,7 @@
 let
   init_extra = ''
     [ ! -f "$HOMEBREW_PREFIX/bin/brew" ] || eval "$($HOMEBREW_PREFIX/bin/brew shellenv)";
-    [ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" && [ -f "$HOME/.nix-profile/bin/," ] || unalias ,;
+    [ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" && [ -f "$HOME/.nix-profile/bin/," ] && unalias ,;
   '';
 in
 {
