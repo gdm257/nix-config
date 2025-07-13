@@ -19,7 +19,16 @@ in
     "..." = "cd ../..";
   };
   home.sessionVariables = {
-    HOMEBREW_PREFIX = "/home/linuxbrew/.linuxbrew";
+    HOMEBREW_PREFIX =
+      let
+        isLinux = pkgs.stdenv.isLinux;
+        isDarwin = pkgs.stdenv.isDarwin;
+        isAarch64 = pkgs.stdenv.isAarch64; # Apple Silicon
+      in
+        if isDarwin then
+          if isAarch64 then "/opt/homebrew"
+          else "/usr/local"
+        else "/home/linuxbrew/.linuxbrew";
   };
   home.sessionPath = [
     "$HOME/.local/bin"
