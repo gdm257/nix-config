@@ -7,41 +7,52 @@
   pkgs,
   ...
 }: {
+  imports = [
+    inputs.nix-index-database.homeModules.nix-index
+    {
+      programs.nix-index-database.comma.enable = true;
+    }
+  ];
+  # programs.nix-index.enable = true; # disable if nix-index-database is used
+
   home.packages = with pkgs; [
+    # Shell
+    busybox
+    uutils-coreutils-noprefix
+    coreutils
+    util-linux
+    findutils
+    xdg-utils
+
     # DevOps
-    gitui
     go-task
+    uv
+    bun
+    rustup
+    inputs.nix-alien.packages.${globals.system}.nix-alien
 
     # Downloader
-    croc
-    rclone
 
     # File
-    duf
-    fd
-    file
 
     # Kernel
-    fastfetch
 
     # Layer
 
     # Network
     curl
     wget
-    doggo
     iproute2
 
     # Process
-    pstree
-
-    # Shell
-    util-linux
-    uutils-coreutils
-    uutils-coreutils-noprefix
 
     # Text
   ];
+
+  # ==== DevOps programs ====
+  programs.go = {
+    enable = true;
+  };
 
   # ==== File programs ====
   programs.eza = {
@@ -99,6 +110,4 @@
     ;
   };
 
-  # ==== Process programs ====
-  programs.htop.enable = true;
 }
