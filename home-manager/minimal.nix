@@ -89,7 +89,7 @@
     ;
     theme =
       {
-        flavor = { dark = "catppuccin-mocha"; light = "catppuccin-mocha"; };
+        flavor = { dark = "catppuccin-mocha"; light = "catppuccin-mocha"; use = "catppuccin-mocha"; };
       }
     ;
     flavors =
