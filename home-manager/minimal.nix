@@ -29,6 +29,7 @@
     uv
     bun
     rustup
+    gcc
     inputs.nix-alien.packages.${globals.system}.nix-alien
 
     # Downloader
