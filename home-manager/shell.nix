@@ -86,10 +86,27 @@ in
     initExtra = ''
       ${init_extra}
 
-      # prompt
-      export PS1='
-      %F{#3465A4}┌──(%f%F{#AD7FA8}%n㉿%m%f%F{#3465A4}%)-[%f%F{yellow}%~%f%F{#3465A4}]%f
+      # Prompt
+      _zsh_auto_shorten_path() {
+        local min_length=20
+        local max_length=$(( COLUMNS * 60 / 100 ))
+        local current_path="$(eval 'print -P "%~"')"
+        local current_length=''${#current_path} # nix escape
+        if (( COLUMNS < min_length )); then
+          echo "%1~"
+        elif (( current_length > max_length )); then
+          echo "%(4~|%-1~/…/%2~|%~)"
+        else
+          echo "$1"
+        fi
+      }
+      setopt prompt_subst
+      _zsh_update_prompt() {
+        PS1='
+      %F{#3465A4}┌──(%f%F{#AD7FA8}%n㉿%m%f%F{#3465A4}%)-[%f%F{yellow}$(_zsh_auto_shorten_path "%~")%f%F{#3465A4}]%f
       %F{#3465A4}└──%f%(?.🟢 %F{#16C60C}%(!.#.>)%f.🔴 %F{red}%(!.#.>)%f) '
+      }
+      add-zsh-hook precmd _zsh_update_prompt
     '';
     initExtraFirst = "";
     envExtra = "";
