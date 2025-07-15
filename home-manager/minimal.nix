@@ -14,7 +14,6 @@
     coreutils
     util-linux
     findutils
-    xdg-utils
 
     # DevOps
     go-task

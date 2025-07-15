@@ -68,6 +68,7 @@
     openssh
     powershell
     wsl-open
+    xdg-utils
 
     # Text
     jq
