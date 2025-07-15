@@ -6,6 +6,5 @@
 }: {
   home.packages = with pkgs; [
     rustup
-    # llvmPackages.llvm
   ];
 }

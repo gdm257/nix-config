@@ -6,6 +6,9 @@
 }: {
   home.packages = with pkgs; [
     # sdk
+    zulu
+
+    # sdk manager
     jbang
 
     # package manager

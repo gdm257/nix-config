@@ -11,6 +11,9 @@
     # package manager
     uv
 
+    # global env
+    python3Minimal
+
     # venv
     micromamba
 
