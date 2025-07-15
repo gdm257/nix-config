@@ -85,6 +85,11 @@ in
     initExtraBeforeCompInit = "";
     initExtra = ''
       ${init_extra}
+
+      # prompt
+      export PS1='
+      %F{#3465A4}┌──(%f%F{#AD7FA8}%n㉿%m%f%F{#3465A4}%)-[%f%F{yellow}%~%f%F{#3465A4}]%f
+      %F{#3465A4}└──%f%(?.🟢 %F{#16C60C}%(!.#.>)%f.🔴 %F{red}%(!.#.>)%f) '
     '';
     initExtraFirst = "";
     envExtra = "";
@@ -120,7 +125,7 @@ in
         "docker"
         # "utility" # bug: mkdir
         # "completion" # too slow
-        "prompt"
+        # "prompt"
       ];
       # extraModules = [ ];
       # extraFunctions = [ ];
