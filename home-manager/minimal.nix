@@ -16,6 +16,7 @@
     findutils
 
     # DevOps
+    jujutsu
     go-task
     uv
     bun
@@ -25,10 +26,12 @@
     # Downloader
 
     # File
+    nix-tree
 
     # Kernel
 
     # Layer
+    lilipod shadow
 
     # Network
     curl
@@ -99,6 +102,11 @@
         catppuccin-mocha = repo + "/catppuccin-mocha.yazi";
       }
     ;
+  };
+
+  # ==== Layer programs ====
+  programs.distrobox = {
+    enable = true;
   };
 
 }

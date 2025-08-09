@@ -36,6 +36,7 @@
     fastfetch
 
     # Layer
+    podman passt shadow # rootless
     cntr
     containerlab
     ctop
@@ -77,7 +78,10 @@
     yq
   ];
 
-  # ==== File programs ====
+  # ==== Layer programs ====
+  programs.distrobox = {
+    enable = true;
+  };
 
   # ==== Process programs ====
   programs.htop.enable = true;
