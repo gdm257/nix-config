@@ -78,11 +78,6 @@
     yq
   ];
 
-  # ==== Layer programs ====
-  programs.distrobox = {
-    enable = true;
-  };
-
   # ==== Process programs ====
   programs.htop.enable = true;
 }

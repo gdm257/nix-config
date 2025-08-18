@@ -31,6 +31,7 @@
     # Kernel
 
     # Layer
+    distrobox # TODO: use programs.distrobox when nixpkgs updated
     lilipod shadow
 
     # Network
@@ -102,11 +103,6 @@
         catppuccin-mocha = repo + "/catppuccin-mocha.yazi";
       }
     ;
-  };
-
-  # ==== Layer programs ====
-  programs.distrobox = {
-    enable = true;
   };
 
 }
