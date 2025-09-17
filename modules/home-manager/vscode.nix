@@ -130,6 +130,7 @@
           junstyle.vscode-django-support
           samuelcolvin.jinjahtml
           battlebas.kivy-vscode
+          marimo-team.vscode-marimo
           ms-toolsai.jupyter
           ms-python.mypy-type-checker
           charliermarsh.ruff
@@ -145,10 +146,9 @@
           rogalmic.bash-debug
           mads-hartmann.bash-ide-vscode
           jeff-hykin.better-dockerfile-syntax
-          srl-labs.vscode-containerlab
+          # srl-labs.vscode-containerlab
           jeff-hykin.better-shellscript-syntax
           samuelcolvin.jinjahtml
-          mindaro.mindaro
           matthewpi.caddyfile-support
           formulahendry.code-runner
           ms-azuretools.vscode-docker
@@ -170,7 +170,6 @@
           hangxingliu.vscode-systemd-support
           bbenoist.vagrant
           # marcostazi.vs-code-vagrantfile
-          jetpack-io.devbox
 
           # ==== common ====
 
@@ -211,6 +210,7 @@
           # docs/notes
           deerawan.vscode-dash
           gruntfuggly.todo-tree
+          codediagram.codediagram
           alefragnani.bookmarks
           alefragnani.project-manager
 
@@ -224,6 +224,7 @@
           github.vscode-github-actions
           github.vscode-pull-request-github
           github.remotehub
+          jjk.jjk
 
           # remote
           ms-vscode-remote.remote-containers
