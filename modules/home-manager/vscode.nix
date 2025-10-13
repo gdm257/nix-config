@@ -291,8 +291,7 @@
       "editor.defaultFormatter" = "vscode.json-language-features";
     };
     "[yaml]" = {
-      "editor.tabSize" = 4;
-      "editor.defaultFormatter" = "redhat.vscode-yaml";
+      "editor.tabSize" = 2;
     };
     "[typescript]" = {
       "editor.defaultFormatter" = "vscode.typescript-language-features";
@@ -341,9 +340,10 @@
     "githubPullRequests.experimental.chat" = true;
     "githubPullRequests.experimental.useQuickChat" = true;
     "tabnine.experimentalAutoImports" = true;
-    # ==== Git ====
+    # ==== Git (built-in) ====
     "git.closeDiffOnOperation" = true;
     "git.ignoreLegacyWarning" = true;
+    # ==== Git ====
     "githubIssues.queries" = [
       {
         "label" = "My Issues";
@@ -362,9 +362,10 @@
     "gitlens.advanced.messages" = {
       "suppressGitVersionWarning" = true;
     };
+    # ==== Markdown (built-in) ====
+    "markdown.preview.fontSize" = 16;
     # ==== Markdown ====
     "markdown-preview-enhanced.previewTheme" = "monokai.css";
-    "markdown.preview.fontSize" = 16;
     # ==== Java ====
     "java.codeGeneration.generateComments" = true;
     "java.codeGeneration.useBlocks" = true;
@@ -373,16 +374,21 @@
     "kotlin.debugAdapter.enabled" = false;
     "kotlin.languageServer.enabled" = false;
     "maven.pomfile.autoUpdateEffectivePOM" = true;
-    # ==== JS/TS ====
+    # ==== JS/TS (built-in) ====
     "typescript.suggest.paths" = true;
     # ==== LaTeX ====
     "latex-workshop.bibtex-format.tab" = "4 spaces";
     "latex-workshop.latex.autoClean.run" = "onFailed";
     "latex-workshop.latex.recipe.default" = "lastUsed";
     "latex-workshop.view.pdf.viewer" = "tab";
-    "matlab.linterConfig" = "D:\\apps\\MATLAB\\R2018b\\bin\\win64\\mlint.exe";
-    "matlab.matlabpath" = "D:\\apps\\MATLAB\\R2018b\\bin\\win64\\MATLAB.exeb";
-    "matlab.mlintpath" = "D:\\apps\\MATLAB\\R2018b\\bin\\win64\\mlint.exe";
+    # ==== Python (built-in) ====
+    "notebook.cellToolbarLocation" = {
+      "default" = "right";
+      "jupyter-notebook" = "left";
+      "runme" = "right";
+    };
+    "notebook.lineNumbers" = "on";
+    "notebook.outline.showCodeCells" = true;
     # ==== Python ====
     "black-formatter.args" = [
       "--skip-string-normalization"
@@ -429,14 +435,7 @@
       "__pypackages__/3.32/lib"
       "__pypackages__/3.33/lib"
     ];
-    "notebook.cellToolbarLocation" = {
-      "default" = "right";
-      "jupyter-notebook" = "left";
-      "runme" = "right";
-    };
-    "notebook.lineNumbers" = "on";
-    "notebook.outline.showCodeCells" = true;
-    # ==== UI ====
+    # ==== UI (built-in) ====
     "debug.console.wordWrap" = false;
     "diffEditor.experimental.showMoves" = true;
     "editor.bracketPairColorization.enabled" = true;
@@ -456,8 +455,11 @@
     "editor.cursorSmoothCaretAnimation" = "off";
     "explorer.autoReveal" = false;
     "explorer.copyRelativePathSeparator" = "/";
+    "scm.inputFontSize" = 17;
     "window.zoomLevel" = 1.5;
     "workbench.colorTheme" = "Monokai";
+    "workbench.iconTheme" = "vscode-great-icons";
+    # ==== UI ====
     "background.style" = {
       "opacity" = 0.95;
     };
@@ -466,7 +468,7 @@
     "osumode.explosionSize" = 3;
     "osumode.comboImageInterval" = 25;
     "osumode.enableComboCounter" = false;
-    # ==== Common ====
+    # ==== Others (built-in) ====
     "files.associations" = {
       "*.cheat" = "shellscript";
     };
@@ -476,31 +478,10 @@
       "**/.svn" = false;
     };
     "json.maxItemsComputed" = 5001;
-    "redhat.telemetry.enabled" = false;
-    "resmon.disk.format" = "Remaining";
-    "resmon.show.battery" = false;
-    "resmon.show.cpufreq" = false;
-    "resmon.show.mem" = false;
-    "scm.inputFontSize" = 17;
-    "security.workspace.trust.enabled" = false;
-    "settingsSync.ignoredExtensions" = [
-      "lhl2617.vslilypond"
-    ];
-    "settingsSync.ignoredSettings" = [
-      "black-formatter.interpreter"
-      "-window.zoomLevel"
-      "terminal.integrated.profiles.windows"
-      "http.proxy"
-      "projectManager.git.baseFolders"
-      "ahk++.file.interpreterPathV2"
-      "AutoHotkey2.InterpreterPath"
-      "AutoHotkey2.CompilerCMD"
-      "terminal.integrated.fontFamily"
-      "terminal.integrated.fontSize"
-      "ahk++.file.interpreterPathV1"
-      "ahk++.file.helpPathV2"
-      "ahk++.file.helpPathV1"
-      "ahk++.file.compilerPath"
+    "remote.defaultExtensionsIfInstalledLocally" = [
+      "GitHub.copilot"
+      "GitHub.copilot-chat"
+      "GitHub.vscode-pull-request-github"
     ];
     "terminal.integrated.allowChords" = false;
     "terminal.integrated.copyOnSelection" = true;
@@ -528,11 +509,9 @@
     };
     "terminal.integrated.rightClickBehavior" = "default";
     "terminal.integrated.scrollback" = 32000;
+    "security.workspace.trust.enabled" = false;
     "update.enableWindowsBackgroundUpdates" = false;
     "update.mode" = "manual";
-    "vscode-office.previewCode" = false;
-    "vscode-office.viewAbsoluteLocal" = true;
-    "vsintellicode.modify.editor.suggestSelection" = "automaticallyOverrodeDefaultValue";
     "window.doubleClickIconToClose" = true;
     "window.newWindowDimensions" = "offset";
     "workbench.editorAssociations" = {
@@ -540,28 +519,99 @@
     };
     "workbench.startupEditor" = "none";
     "workbench.tree.expandMode" = "singleClick";
+    "window.restoreWindows" = "none";
+    # ==== Others ====
+    "redhat.telemetry.enabled" = false;
+    "resmon.disk.format" = "Remaining";
+    "resmon.show.battery" = false;
+    "resmon.show.cpufreq" = false;
+    "resmon.show.mem" = false;
+    "settingsSync.ignoredExtensions" = [
+      "lhl2617.vslilypond"
+    ];
+    "settingsSync.ignoredSettings" = [
+      "black-formatter.interpreter"
+      "-window.zoomLevel"
+      "terminal.integrated.profiles.windows"
+      "http.proxy"
+      "projectManager.git.baseFolders"
+      "ahk++.file.interpreterPathV2"
+      "AutoHotkey2.InterpreterPath"
+      "AutoHotkey2.CompilerCMD"
+      "terminal.integrated.fontFamily"
+      "terminal.integrated.fontSize"
+      "ahk++.file.interpreterPathV1"
+      "ahk++.file.helpPathV2"
+      "ahk++.file.helpPathV1"
+      "ahk++.file.compilerPath"
+    ];
+    "vscode-office.previewCode" = false;
+    "vscode-office.viewAbsoluteLocal" = true;
+    "vsintellicode.modify.editor.suggestSelection" = "automaticallyOverrodeDefaultValue";
     "yaml.maxItemsComputed" = 30000;
     "sqltools.results.limit" = 100;
-    "window.restoreWindows" = "none";
     "bangumiOpen.EnableReminder" = false;
-    "errorLens.exclude" = [
+    "errorLens.excludeByMessage" = [
       "unknown word"
     ];
+    "makefile.configureOnOpen" = true;
     "vim.camelCaseMotion.enable" = true;
     "vim.easymotion" = true;
-    "vim.replaceWithRegister" = false;
+    "vim.targets.enable" = true;
+    "vim.sneak" = true;
+    "vim.sneakReplacesF" = true;
+    "vim.sneakUseIgnorecaseAndSmartcase" = true;
     "vim.foldfix" = true;
     "vim.incsearch" = true;
     "vim.showMarksInGutter" = true;
     "vim.useSystemClipboard" = true;
-    "vim.useCtrlKeys" = true;
     "vim.matchpairs" = "(:),{:},[:],<:>,（:）,《:》,【:】,「:」,『:』,＜:＞,［:］,｛:｝,\":\",＂:＂";
-    "workbench.iconTheme" = "vscode-great-icons";
-    "makefile.configureOnOpen" = true;
-    "remote.defaultExtensionsIfInstalledLocally" = [
-      "GitHub.copilot"
-      "GitHub.copilot-chat"
-      "GitHub.vscode-pull-request-github"
+    "vim.leader" = "<space>";
+    "vim.useCtrlKeys" = true;
+    "vim.handleKeys" = {
+        "<C-j>" = false;
+        "<C-k>" = false;
+        "<C-s>" = false;
+    };
+    "vim.normalModeKeyBindings" = [
+        {
+            "before" = [":"];
+            "commands" = ["vim.showQuickpickCmdLine"];
+            "when" = "editorTextFocus && vim.mode != 'Insert'";
+        }
+    ];
+    "vim.visualModeKeyBindings" = [
+        {
+            "before" = [">"];
+            "commands" = ["editor.action.indentLines"];
+        }
+        {
+            "before" = ["<"];
+            "commands" = ["editor.action.outdentLines"];
+        }
+    ];
+    "vim.insertModeKeyBindings" = [
+        {
+            "before" = ["j" "j"];
+            "after" = ["<Esc>"];
+        }
+        {
+            "before" = ["j" "k"];
+            "after" = ["<Esc>"];
+            "commands" = ["workbench.action.files.save"];
+        }
+        {
+            "before" = ["<C-c>"];
+            "commands" = ["editor.action.clipboardCopyAction"];
+        }
+        {
+            "before" = ["<C-x>"];
+            "commands" = ["editor.action.clipboardCutAction"];
+        }
+        {
+            "before" = ["<C-w>"];
+            "commands" = ["workbench.action.closeActiveEditor"];
+        }
     ];
   };
   programs.vscode.keybindings = [
