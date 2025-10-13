@@ -77,7 +77,7 @@
           xabikos.javascriptsnippets
           zignd.html-css-class-completion
           yoavbls.pretty-ts-errors
-          youngjuning.yarn-lock-preview
+          # youngjuning.yarn-lock-preview
           zxh404.vscode-proto3
 
           # jvm - java/kotlin/scala/clojure
@@ -120,7 +120,7 @@
           ms-python.python
           ms-python.vscode-pylance
           ms-python.debugpy
-          gaogaotiantian.coredumpy-vscode
+          # gaogaotiantian.coredumpy-vscode
           njpwerner.autodocstring
           rodolphebarbanneau.python-docstring-highlighter
           seanwu.vscode-qt-for-python
@@ -151,6 +151,7 @@
           samuelcolvin.jinjahtml
           matthewpi.caddyfile-support
           formulahendry.code-runner
+          dbcode.dbcode
           ms-azuretools.vscode-docker
           p1c2u.docker-compose
           exiasr.hadolint
@@ -176,24 +177,14 @@
           # ai
           github.copilot
           github.copilot-chat
+          automatalabs.copilot-mcp
           # ms-vscode.vscode-websearchforcopilot
           # ms-vscode.copilot-mermaid-diagram
-          # automatalabs.copilot-mcp
           # cpulvermacher.lgtm
-          # dbcode.dbcode
-          codeium.codeium
-          # marscode.marscode-extension
-          # augment.vscode-augment
-          # continue.continue
-          # dreamlight.aline
-          # coolcline.coolcline
-          # rooveterinaryinc.roo-cline
-          # saoudrizwan.claude-dev
-          # codium.codium
-          # aminer.codegeex
-          # danielsanmedium.dscodegpt
-          # blackboxapp.blackbox
-          # alibaba-cloud.tongyi-lingma
+          # vscjava.migrate-java-to-azure
+
+          kilocode.kilo-code
+          marscode.marscode-extension
 
           # vim
           asvetliakov.vscode-neovim
