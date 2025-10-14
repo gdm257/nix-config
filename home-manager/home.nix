@@ -68,5 +68,6 @@
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+  # https://github.com/nix-community/home-manager/issues/5794
   home.stateVersion = "24.11";
 }
