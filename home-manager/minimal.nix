@@ -9,16 +9,16 @@
 }: {
   home.packages = with pkgs; [
     # Shell
-    busybox
-    uutils-coreutils-noprefix
-    coreutils
-    util-linux
-    findutils
+    # busybox
+    # uutils-coreutils-noprefix
+    # coreutils
+    # util-linux
+    # findutils
 
     # DevOps
     go-task
-    rustup
-    gcc
+    # rustup
+    # gcc # recommend systel level
 
     # Downloader
 
@@ -50,9 +50,9 @@
   programs.bun = {
     enable = true;
   };
-  programs.go = {
-    enable = true;
-  };
+  # programs.go = {
+  #   enable = true;
+  # };
 
   # ==== DevOps programs ====
   programs.distrobox = {
@@ -73,6 +73,7 @@
   };
   programs.yazi = {
     enable = true;
+    package = pkgs.go-task; # Placeholder pkg to reduce size. Install bin manually
     settings =
       {
         manager = {
@@ -102,7 +103,7 @@
         repo = pkgs.fetchFromGitHub {
           owner = "yazi-rs";
           repo = "flavors";
-          rev = "fc8eeaab9da882d0e77ecb4e603b67903a94ee6e";
+          rev = "f6b425a6d57af39c10ddfd94790759f4d7612332";
           hash = "sha256-wvxwK4QQ3gUOuIXpZvrzmllJLDNK6zqG5V2JAqTxjiY=";
         };
       in
