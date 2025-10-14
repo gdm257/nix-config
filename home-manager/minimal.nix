@@ -16,10 +16,7 @@
     findutils
 
     # DevOps
-    jujutsu
     go-task
-    uv
-    bun
     rustup
     gcc
 
@@ -31,7 +28,6 @@
     # Kernel
 
     # Layer
-    distrobox # TODO: use programs.distrobox when nixpkgs updated
     lilipod shadow
 
     # Network
@@ -45,7 +41,21 @@
   ];
 
   # ==== DevOps programs ====
+  programs.jujutsu = {
+    enable = true;
+  };
+  programs.uv = {
+    enable = true;
+  };
+  programs.bun = {
+    enable = true;
+  };
   programs.go = {
+    enable = true;
+  };
+
+  # ==== DevOps programs ====
+  programs.distrobox = {
     enable = true;
   };
 

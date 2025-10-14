@@ -32,6 +32,7 @@ in
   };
   home.sessionPath = [
     "$HOME/.local/bin"
+    "$HOME/.bun/bin"
     "${config.home.sessionVariables.HOMEBREW_PREFIX}/bin"
     "${config.home.sessionVariables.HOMEBREW_PREFIX}/sbin"
   ];
