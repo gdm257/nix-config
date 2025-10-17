@@ -215,7 +215,6 @@
           github.vscode-github-actions
           github.vscode-pull-request-github
           github.remotehub
-          jjk.jjk
 
           # remote
           ms-vscode-remote.remote-containers
@@ -240,7 +239,6 @@
           # deepred.daily-anime
 
           # others
-          davidanson.vscode-markdownlint
           editorconfig.editorconfig
           emilast.logfilehighlighter
           grapecity.gc-excelviewer
