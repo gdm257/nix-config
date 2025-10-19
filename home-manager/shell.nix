@@ -82,33 +82,42 @@ in
     };
     defaultKeymap = null; # "emacs" "viins" "vicmd"
     sessionVariables = { };
-    initExtraBeforeCompInit = "";
-    initExtra = ''
-      ${init_extra}
+    initContent =
+      let
+        _initExtraFirst = lib.mkOrder 500 ''
+        '';
+        _initExtraBeforeCompInit = lib.mkOrder 550 ''
+        '';
+        _initExtra = lib.mkOrder 1000 ''
+          ${init_extra}
 
-      # Prompt
-      _zsh_auto_shorten_path() {
-        local min_length=20
-        local max_length=$(( COLUMNS * 60 / 100 ))
-        local current_path="$(eval 'print -P "%~"')"
-        local current_length=''${#current_path} # nix escape
-        if (( COLUMNS < min_length )); then
-          echo "%1~"
-        elif (( current_length > max_length )); then
-          echo "%(4~|%-1~/…/%2~|%~)"
-        else
-          echo "$1"
-        fi
-      }
-      setopt prompt_subst
-      _zsh_update_prompt() {
-        PS1='
-      %F{#3465A4}┌──(%f%F{#AD7FA8}%n㉿%m%f%F{#3465A4}%)-[%f%F{yellow}$(_zsh_auto_shorten_path "%~")%f%F{#3465A4}]%f
-      %F{#3465A4}└──%f%(?.🟢 %F{#16C60C}%(!.#.>)%f.🔴 %F{red}%(!.#.>)%f) '
-      }
-      add-zsh-hook precmd _zsh_update_prompt
-    '';
-    initExtraFirst = "";
+          # Prompt
+          _zsh_auto_shorten_path() {
+            local min_length=20
+            local max_length=$(( COLUMNS * 60 / 100 ))
+            local current_path="$(eval 'print -P "%~"')"
+            local current_length=''${#current_path} # nix escape
+            if (( COLUMNS < min_length )); then
+              echo "%1~"
+            elif (( current_length > max_length )); then
+              echo "%(4~|%-1~/…/%2~|%~)"
+            else
+              echo "$1"
+            fi
+          }
+          setopt prompt_subst
+          _zsh_update_prompt() {
+            PS1='
+          %F{#3465A4}┌──(%f%F{#AD7FA8}%n㉿%m%f%F{#3465A4}%)-[%f%F{yellow}$(_zsh_auto_shorten_path "%~")%f%F{#3465A4}]%f
+          %F{#3465A4}└──%f%(?.🟢 %F{#16C60C}%(!.#.>)%f.🔴 %F{red}%(!.#.>)%f) '
+          }
+          add-zsh-hook precmd _zsh_update_prompt
+        '';
+        _initMkAfeter = lib.mkOrder 1500 ''
+        '';
+      in
+        lib.mkMerge [ _initExtraFirst _initExtraBeforeCompInit _initExtra _initMkAfeter ]
+    ;
     envExtra = "";
     profileExtra = "";
     loginExtra = "";
