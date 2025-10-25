@@ -177,13 +177,12 @@
           # ai
           github.copilot
           github.copilot-chat
-          automatalabs.copilot-mcp
           # ms-vscode.vscode-websearchforcopilot
           # ms-vscode.copilot-mermaid-diagram
           # cpulvermacher.lgtm
           # vscjava.migrate-java-to-azure
 
-          kilocode.kilo-code
+          # kilocode.kilo-code
           marscode.marscode-extension
 
           # vim
