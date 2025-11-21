@@ -60,9 +60,8 @@
     homeDirectory = globals.home;
   };
 
-  # Enable home-manager and git
+  # Enable home-manager
   home.packages = [ pkgs.home-manager ];
-  programs.git.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
