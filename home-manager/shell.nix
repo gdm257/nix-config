@@ -160,9 +160,26 @@ in
   };
   programs.direnv = {
     enable = true;
-    # mise.enable = true;
+    mise.enable = true;
     config = {
       global.load_dotenv = true;
+    };
+  };
+  programs.mise = {
+    enable = true;
+    settings = {
+      experimental = true;
+      # env_file = ".env";
+      npm.bun = true;
+      pipx.uvx = true;
+      python.uv_venv_auto = true;
+    };
+    globalConfig = {
+      tools = {
+        go = "latest";
+        node = "lts";
+        python = { version= "3.13"; };
+      };
     };
   };
   programs.man.enable = true;
