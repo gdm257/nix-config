@@ -103,7 +103,14 @@
     # Available through 'home-manager --flake .#your-username'
     homeConfigurations = {
       "${globals.username}" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${globals.system}; # Home-manager requires 'pkgs' instance
+        pkgs = import nixpkgs {
+          system = globals.system; # Home-manager requires 'pkgs' instance
+          overlays = [
+            self.overlays.additions
+            self.overlays.modifications
+          ];
+          config.allowUnfree = true;
+        };
         extraSpecialArgs = {inherit inputs outputs globals;};
         modules = [
           # > Our main home-manager configuration file <
