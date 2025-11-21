@@ -15,7 +15,7 @@
     nix-alien.inputs.nix-index-database.follows = "nix-index-database";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    nixos-wsl.url = "github:nix-community/NixOS-WSL/2411.6.0";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/2505.7.0";
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
     proxmox-nixos.inputs.flake-compat.follows = "flake-compat";
     localias.url = "github:peterldowns/localias";
