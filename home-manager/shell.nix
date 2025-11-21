@@ -167,14 +167,14 @@ in
   };
   programs.mise = {
     enable = true;
-    settings = {
-      experimental = true;
-      # env_file = ".env";
-      npm.bun = true;
-      pipx.uvx = true;
-      python.uv_venv_auto = true;
-    };
     globalConfig = {
+      settings = {
+        experimental = true;
+        # env_file = ".env"; # comment if use direnv
+        npm.bun = true;
+        pipx.uvx = true;
+        python.uv_venv_auto = true;
+      };
       tools = {
         go = "latest";
         node = "lts";
