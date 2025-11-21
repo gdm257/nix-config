@@ -3,4 +3,5 @@
 pkgs: {
   # example = pkgs.callPackage ./example { };
   yazi = pkgs.callPackage ./yazi { };
+  localias = pkgs.callPackage ./localias { };
 }

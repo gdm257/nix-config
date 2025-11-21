@@ -18,8 +18,6 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL/2505.7.0";
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
     proxmox-nixos.inputs.flake-compat.follows = "flake-compat";
-    localias.url = "github:peterldowns/localias";
-    localias.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs @ {
@@ -34,7 +32,6 @@
     nix-vscode-extensions,
     nixos-wsl,
     proxmox-nixos,
-    localias,
     ...
   }: let
     inherit (self) outputs;

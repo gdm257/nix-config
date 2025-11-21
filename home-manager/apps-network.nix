@@ -12,6 +12,7 @@
     bandwhich
     doggo
     gping
-    caddy inputs.localias.packages.${globals.system}.default
+    caddy
+    localias
   ];
 }
