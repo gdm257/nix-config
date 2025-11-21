@@ -177,8 +177,8 @@ in
       };
       tools = {
         go = "latest";
-        node = "lts";
-        python = { version= "3.13"; };
+        node = { postinstall = "corepack enable"; version = "lts"; };
+        python = "3.13";
       };
     };
   };
