@@ -158,6 +158,13 @@ in
       # extraFunctions = [ ];
     };
   };
+  programs.direnv = {
+    enable = true;
+    # mise.enable = true;
+    config = {
+      global.load_dotenv = true;
+    };
+  };
   programs.man.enable = true;
   programs.starship = {
     enable = true;
