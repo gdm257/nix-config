@@ -6,5 +6,16 @@
   "isNixosWsl": false,
   "isPersonalComputer": true,
   "isDesktop": false,
-  "isSteamDeck": false
+  "isSteamDeck": false,
+  "enableFile": false,
+  "enableText": false,
+  "enablePicture": false,
+  "enableAudio": false,
+  "enableVideo": false,
+  "enableProcess": false,
+  "enableKernel": false,
+  "enableNetwork": false,
+  "enableLayer": false,
+  "enableShell": false,
+  "enableDevops": false
 }

@@ -23,11 +23,22 @@
     ./shell.nix
 
     ./minimal.nix
-    # ./apps.nix
 
     (if globals.isDesktop then inputs.nix-flatpak.homeManagerModules.nix-flatpak else {})
     (if globals.isDesktop then ./flatpak.nix else {})
     (if globals.isDesktop && globals.isSteamDeck then ./steamdeck.nix else {})
+    (if globals.enableFile then ./apps-file.nix else {})
+    (if globals.enableText then ./apps-text.nix else {})
+    (if globals.enablePicture then ./apps-picture.nix else {})
+    (if globals.enableAudio then ./apps-audio.nix else {})
+    (if globals.enableVideo then ./apps-video.nix else {})
+    (if globals.enableProcess then ./apps-process.nix else {})
+    (if globals.enableKernel then ./apps-kernel.nix else {})
+    (if globals.enableDownloader then ./apps-downloader.nix else {})
+    (if globals.enableNetwork then ./apps-network.nix else {})
+    (if globals.enableLayer then ./apps-layer.nix else {})
+    (if globals.enableShell then ./apps-shell.nix else {})
+    (if globals.enableDevops then ./apps-devops.nix else {})
   ];
 
   nixpkgs = {
