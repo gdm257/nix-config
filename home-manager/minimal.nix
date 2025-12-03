@@ -21,7 +21,6 @@
     # Kernel
 
     # Layer
-    lilipod shadow
 
     # Network
     curl
@@ -43,14 +42,6 @@
   programs.bun = {
     enable = true;
   };
-  # programs.go = {
-  #   enable = true;
-  # };
-
-  # ==== DevOps programs ====
-  # programs.distrobox = {
-  #   enable = true;
-  # };
 
   # ==== File programs ====
   programs.eza = {

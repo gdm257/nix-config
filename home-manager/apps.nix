@@ -86,6 +86,10 @@
 
   # ==== DevOps programs ====
   programs.git.enable = true;
+  programs.distrobox = {
+    enable = true;
+  };
+
 
   # ==== File programs ====
   programs.yazi = {
