@@ -12,6 +12,7 @@
   "enablePicture": false,
   "enableAudio": false,
   "enableVideo": false,
+  "enableDownloader": false,
   "enableProcess": false,
   "enableKernel": false,
   "enableNetwork": false,
