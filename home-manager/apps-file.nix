@@ -15,6 +15,5 @@
     fd
     file
     lvm2_vdo
-    btrfs-progs
   ];
 }

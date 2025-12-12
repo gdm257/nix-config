@@ -16,7 +16,7 @@
     findutils
 
     firejail
-    mosh
+    opkssh
     openssh
     powershell
     wsl-open

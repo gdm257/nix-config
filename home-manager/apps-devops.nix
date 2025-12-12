@@ -11,12 +11,9 @@
     # DevOps
     bit
     gitui
-    gitu
     elfutils
     elfkickers
     elf-info
-    devbox
-    devspace
     devpod
   ];
 
