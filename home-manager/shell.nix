@@ -176,9 +176,7 @@ in
         python.uv_venv_auto = true;
       };
       tools = {
-        go = "latest";
-        node = { postinstall = "corepack enable"; version = "lts"; };
-        python = "3.13";
+        node = { version="lts"; postinstall="corepack enable"; };
       };
     };
   };
