@@ -172,7 +172,7 @@ in
       settings = {
         experimental = true;
         # env_file = ".env"; # comment if use direnv
-        npm.bun = true;
+        npm.package_manager = "bun"; # require mise 2025.12.7+
         pipx.uvx = true;
         python.uv_venv_auto = true;
       };
