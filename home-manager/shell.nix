@@ -167,6 +167,7 @@ in
   };
   programs.mise = {
     enable = true;
+    package = inputs.nixpkgs-unstable.legacyPackages.${globals.system}.mise;
     globalConfig = {
       settings = {
         experimental = true;
