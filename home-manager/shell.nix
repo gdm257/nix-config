@@ -61,7 +61,6 @@ in
     enable = true;
     autocd = false;
     cdpath = [ ];
-    dotDir = null;
     shellAliases = { };
     shellGlobalAliases = { };
     dirHashes = {
