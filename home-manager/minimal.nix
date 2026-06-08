@@ -12,6 +12,7 @@
 
     # DevOps
     go-task
+    gh
 
     # Downloader
 
