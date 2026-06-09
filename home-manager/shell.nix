@@ -219,6 +219,7 @@ in
   programs.yazi = {
     enable = true;
     package = pkgs.yazi;
+    shellWrapperName = "yy";
     settings =
       {
         mgr = {
@@ -248,8 +249,8 @@ in
         repo = pkgs.fetchFromGitHub {
           owner = "yazi-rs";
           repo = "flavors";
-          rev = "f6b425a6d57af39c10ddfd94790759f4d7612332";
-          hash = "sha256-wvxwK4QQ3gUOuIXpZvrzmllJLDNK6zqG5V2JAqTxjiY=";
+          rev = "0f9204bc948c8313963f5c9d571a82edc201f8aa";
+          hash = "sha256-qWNArjWuxWL+rOjLzyIniW5hJgWiAWTCgXmMXJpaWZE=";
         };
       in
       {

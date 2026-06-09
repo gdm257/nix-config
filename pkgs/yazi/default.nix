@@ -1,8 +1,8 @@
-{ lib, stdenv, fetchzip, unzip }:
+{ lib, stdenv, fetchzip, unzip, file, makeWrapper }:
 
 stdenv.mkDerivation rec {
   pname = "yazi";
-  version = "25.5.31";
+  version = "26.5.6";
 
   # 平台特定的下载映射
   src = fetchzip {
@@ -14,16 +14,17 @@ stdenv.mkDerivation rec {
     }.${stdenv.hostPlatform.system} or (throw "Unsupported platform: ${stdenv.hostPlatform.system}");
 
     sha256 = {
-      x86_64-linux = "eyw27/5uQJ1rGRunM+Z5dW3Cc20UdyGUfWhAdtV16/w=";
-      aarch64-linux = "1zpqx3fycfdlkznx9k7hllvij0rxpn2kdyprwm3pldf1ch7rbj14";
-      x86_64-darwin = "0fw19yjnql556hq0sah0lsb7gpsv3azjq93ncicpfj4i4xs4vbra";
-      aarch64-darwin = "0w7x5dfm387nqvhf47xjb82x31j8isvg4vw6vpwi3kc4ixz17pwb";
+      x86_64-linux = "0phv9pjlda09w8y6z46v2j997i4z02wz1igj26glhrk5gz6k0s8s";
+      aarch64-linux = "17jhp7l1an120cl9wjzpw9rlcf5ds7g6f3arxbf7qvxk720r13i9";
+      x86_64-darwin = "17flq8mxm3pa9l22a09m8nc38jc4zw0d1a57jkfj3nv1f1zbs6py";
+      aarch64-darwin = "01v6hc2nv1mkri4yi9l38msrx9q2ly5smml1m3jpv61hm8vdb5ca";
     }.${stdenv.hostPlatform.system};
 
     stripRoot = false;  # ZIP 文件包含版本号目录
   };
 
-  nativeBuildInputs = [ unzip ];
+  nativeBuildInputs = [ unzip makeWrapper ];
+  buildInputs = [ file ];
 
   # 安装阶段
   installPhase = ''
@@ -60,6 +61,7 @@ stdenv.mkDerivation rec {
     fi
 
     runHook postInstall
+    wrapProgram $out/bin/yazi --prefix PATH : ${lib.makeBinPath [ file ]}
   '';
 
   # 元数据
