@@ -158,7 +158,7 @@ in
     };
   };
   programs.direnv = {
-    enable = true;
+    enable = false; # disable if mise enables `env_file`
     mise.enable = true;
     config = {
       global.load_dotenv = true;
@@ -169,8 +169,11 @@ in
     package = inputs.nixpkgs-unstable.legacyPackages.${globals.system}.mise;
     globalConfig = {
       settings = {
+        trusted_config_paths = [ "/" ];
         experimental = true;
-        # env_file = ".env"; # comment if use direnv
+        env_file = ".env"; # comment if direnv is used
+        env_shell_expand = true;
+        jobs = 4;
         prefer_offline = true;
         npm.package_manager = "pnpm"; # require mise 2025.12.7+
         pipx.uvx = true;
